@@ -1,4 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://blog.pilrymage.xyz/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Pilrymage blog'
 theme = 'hugo-theme-stack'
+
+[params.utterances]
+owner = "Pilrymage"
+repo = "comment"
