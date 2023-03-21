@@ -81,3 +81,4 @@ doom emacs 的 package.el：
 使用 ~org-hugo-export-wim-to-md~ 函数导出。该函数有快捷键，但是与 doom emacs 不兼容。
 因为 org 的 todo 对应 hugo 的 draft 状态，只有先将博文设为 done 才能导出。
 然后就可以用 ~hugo server~ 检查输出了。
+** 结语
