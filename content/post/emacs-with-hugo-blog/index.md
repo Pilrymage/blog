@@ -2,8 +2,12 @@
 title = "Emacs 搭配 Hugo 的个人博客创作"
 author = ["Keara Coara"]
 lastmod = "YYYY-MM-DD"
+tags = ["Emacs"]
+categories = ["Lisp与Emacs"]
 draft = false
 +++
+
+参见：[子龙山人](https://zilongshanren.com/post/move-from-hexo-to-hugo/)，[Emacs 中文社区讨论串](https://emacs-china.org/t/topic/5427)
 
 作为一款文本编辑器，Emacs 的上限是肉眼可见的极高：定制水平很大程度上影响了编辑器的外观及能力。
 
@@ -74,3 +78,13 @@ doom emacs 的 package.el：
 使用 <kbd>org-hugo-export-wim-to-md</kbd> 函数导出。该函数有快捷键，但是与 doom emacs 不兼容。
 因为 org 的 todo 对应 hugo 的 draft 状态，只有先将博文设为 done 才能导出。
 然后就可以用 <kbd>hugo server</kbd> 检查输出了。
+
+
+## 结语 {#结语}
+
+写个五分钟，这篇博文就已经部署好了，咱充分享受到科技的便利。
+其实这篇也没有什么自己的东西，只是不完整地总结了一边前人的知识。
+然而比之以前用 Windows 的 Git 命令行强行部署 hexo ，半懂不懂，个人觉得算是巨大的进步了。
+
+学计算机的，果然还是要有一个 Linux 系统，免去众多的闲杂烦恼。
+而遇见 Emacs， 虽说是学 Linux 的附带收获，却实在是我的一大幸事，它能不断满足我的奇妙想法。

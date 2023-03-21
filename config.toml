@@ -2,6 +2,7 @@ baseURL = 'https://blog.pilrymage.xyz/'
 languageCode = 'en-us'
 title = 'Pilrymage blog'
 theme = 'hugo-theme-stack'
+comments = true
 
 [params.utterances]
 owner = "Pilrymage"
