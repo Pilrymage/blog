@@ -25,7 +25,7 @@ int main()
 :EXPORT_HUGO_BUNDLE: emacs-with-hugo-blog
 :EXPORT_FILE_NAME: index
 :END:
-参见：[[https://zilongshanren.com/post/move-from-hexo-to-hugo/][子龙山人]]，[[https://emacs-china.org/t/topic/5427][Emacs 中文社区讨论串]]
+参见：[[https://zilongshanren.com/post/move-from-hexo-to-hugo/][子龙山人]]，[[https://emacs-china.org/t/topic/5427][Emacs 中文社区串]]
 
 作为一款文本编辑器，Emacs 的上限是肉眼可见的极高：定制水平很大程度上影响了编辑器的外观及能力。
 
@@ -89,3 +89,84 @@ doom emacs 的 package.el：
 
 学计算机的，果然还是要有一个 Linux 系统，免去众多的闲杂烦恼。
 而遇见 Emacs， 虽说是学 Linux 的附带收获，却实在是我的一大幸事，它能不断满足我的奇妙想法。
+
+* TODO 4chan：互联网的遗民
+** 快速FAQ
+
+A：为什么写这么一个博文？
+
+Q：因为国内没什么人看4chan。这也就是一篇安利文吧。
+可能大多数中文论坛，谈及4chan 的就是“臭名昭著的粪坑”，
+或者是“网络暴力的根据地”；时不时也能看到几篇黑色幽默的“4chan笑话”。
+用国内论坛类比，其形式为中国的“A岛匿名版”所借鉴；
+然而就内容而言，其实更接近百度贴吧；包罗万象，有不少精品贴与亚文化，
+除了4chan没有用户账户，人人都是anon（匿名者，anonymous)。
+
+我喜欢百度贴吧，至少是以前的；五湖四海的网民们热心总结资源与教程，
+相互之间谈天说地，或体现出每个人的人生轨迹，
+堪称是中国互联网文化与精神的范本。
+不论其中糟粕，贴吧也曾让我有所收获；
+而接触 4chan 同样让我是收获满满。因此我希望写篇介绍文。
+
+A：4chan 用户都是些什么人？
+Q：不需统计，其用户画像多为英语圈的美国白人。
+再加一条，就是用户多宅男。/a/（动漫版）是此处最大的版块。
+总之，用户大约是歧视链的顶端，鄙视链的底端（weaboo）。
+如果你混二次元，先补几部番能更好地理解 4chan，
+虽说这里的用户是婆罗门扎堆。
+
+** 翻遍小网站，你能得到什么
+*** /a/ Anime
+动画版，与动漫相关的各种东西。
+然而并没有很多子版块，虽然其它版块普遍有大量子版块。
+
+梦开始的地方。从中甚至产生了一部同人 Galgame。
+
+*** /g/ Technology
+科技版，实际上其内容面向程序员群体。
+这一版块的用户鱼龙混杂，涉猎广泛，有各种常驻子版块：
+- /dpt/：Daily Programming Thread，编程日常串。
+- /fwt/：Friendly Windows Thread, 友好 Windows 串，
+- /fglt/：Friendly GNU/Linux Thread, 友好 GNU/Linux 串，
+- /flet/：Friendly Lisp & Emacs Thread，Lisp 与 Emacs 串，
+  总有各种 SICP 的 meme 图。
+- /csg/：Chink Shit General，国货垃圾佬综合。
+- /pcbg/：PC Building General，电脑拼装综合。
+- /wsg/：Home Server General，自建服务器综合。
+- /hsg/：Home Server General，自建服务器综合。
+- /ptg/：Private Tracker General，PT 综合。
+- /psg/：Privacy & Security General，隐私与安全综合。
+- /dmp/：Digital Music Production，电音制作。
+
+一些紧跟热点的子版块：
+- /aicg/：AI chatbot general，AI 聊天机器人综合。
+- /sdg/：Stable Diffusion general，Stable Diffusion 综合。
+- /vsg/：AI Voice Synthesis General，AI 语音合成综合。
+
+以及一些产品的推荐：
+- /tpg/：ThinkPad General，ThinkPad 天下第一！
+- /iemg/：
+- /ppg/：Pen & Pencil General，笔与铅笔综合。
+
+值得注意的是，其子版块的一楼（sticky）总有很多免费资源供下载学习。
+ /g/ 的置顶MOD串放出了/g/的维基，从而/g/也是 Gentoo Linux 的意思。
+ 置顶还有三个人的“神像”：
+ TempleOS 作者特伦斯・A・戴维斯(TAD)
+ 《珈百璃的堕落》里[[][“看不起苹果粉”]]的萨塔妮亚(SKM)
+ GNU自由软件运动的理查德・M・斯托曼(RMS)，
+
+*** /jp/
+"get out of /jp/."（魔理沙）
+
+日本版，包括势力很大的东方众，龙骑士作品讨论，型月，
+日本偶像、综艺、地铁以及niconico与音MAD等等。
+*** /pol/ Politically *Incorrect*
+政治不正确版。用户多右派。
+*** /lit/ Literature
+文学版。有各种书单推荐，包括古代语言学习。
+*** /tg/ Traditional Games
+传统游戏版。包括绘画，写故事，下棋等消遣。
+
+
+* TODO vim：千斤顶
+* TODO 《SICP》有感：计科非计算机
