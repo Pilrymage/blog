@@ -199,3 +199,56 @@ Q：不需统计，其用户画像多为英语圈的美国白人。
 *** 感性认识
 
 *** 打倒感性认识
+* TODO Windows 重装扩C盘的故事，以及Archlinux 重装 grub 引导
+** Windows 一事
+我的电脑是 Windows + Arch 双系统。
+某次抱怨 Windows 的 C 盘只有 60G 容量太小，分给 D 盘的空间太大，
+于是果断删 D 盘，C 盘大大扩张。
+———话说一个电脑分两个盘是好习惯，这样重装 C 盘系统就不用搬运 D 盘资料，
+当然我是外挂了一个固态硬盘做资料盘。
+———结果不知如何，电脑的管理员权限挂掉了。
+可能也与我之前把一些环境变量写到 D 盘有关系。
+
+由于大多数上次重装时软件都放在了 D盘，现在则是完全用不了。
+用不了管理员权限，连rufus也用不了，也烧录不了重装盘。
+幸好进入安全模式还能用管理员权限，还是老老实实地重装了系统。
+这时候外挂硬盘的优势就十分明显了：重装后可以用里面的便携版本软件。
+
+** Archlinux 的抱怨
+重装还好，结果重新启动，就不由分说的入了 ~grub rescue~ 。
+好家伙，Windows 的事，grub 搀和什么？这也只能再烧一个 Archiso 盘来救场。
+
+*** btrfs
+照着 [[][archlinux 简明指南]]做的 btrfs 文件系统，回滚非常好用而不怎么要操心。
+然而挂载就费点力了，主要单受过安利而没读过 btrfs 文档，而挂载又有一堆选项。
+幸好第一轮折腾没有出事，老老实实找到指南来挂载。
+ext4 的挂载要容易挺多。。。
+
+*** /boot/efi 挂载一事
+记不清是要把 EFI 分区挂在 /boot 还是 /boot/efi 了，也因此栽了大坑。
+现在稍微明白一点 grub 加载 efi 的道理了：安装 linux 内核会把 img 文件放在在 /boot 里，
+而 ~grub-mkconfig~ 会寻找这些 img 文件，做成 menuentry 项。
+至于不会自动放出引导文件的系统，如 Windows，
+有 os-prober 在 EFI 分区里寻找引导文件，Windows 就是efimgfw.efi。
+我的EFI分区挂载在 /boot/efi，有子目录 /boot/efi/EFI 包含 Windows 等系统的引导文件。
+
+一个坑是，指南说用 Windows 自己建的 EFI 分区，又说用 /boot 直接做启动分区挂载点，
+结果 Windows 的分区默认 100M 大小，有时候 grub 装不进，有时候 linux 的 img 文件装不进。
+用 /boot/efi 挂载， linux 的 img 文件装在 /boot 下，实际上是根目录（主分区）的一部分，这就装得下了。
+
+os-prober 由于某种原因，报错 ~error mkdir /var/lock/dmraid/~ ，然后检测不到 Windows。
+我没有头绪；有几个贴子说是自己的 fstab 没更新，挂载不对。
+我最后直接手写 grub.cfg 文件了。就是要找到上面所说的 efimgfw.efi。
+
+想通这一点大约折腾了一晚上4个小时加早上2小时。
+
+*** fstab 与自动挂载
+一个小知识，因为 /etc/fstab 也重做了，结果外挂的硬盘不见了。
+要自动挂载也非常容易： ~blkid /etc/<编号>~ 导入 /etc/fstab，
+然后保留UUID，格式与其它行相同即可。
+一个 ntfs 格式的外挂硬盘，可以同时用于 Windows 与 Archlinux 双系统的资源共享。
+不过主要是 Archlinux 可以直接访问 Windows 的全部内容，Windows 和 ext4 不太对付。。。
+
+** 最后
+照着教程装好的 Archlinux ，大约不能表示自己多么擅长 linux 。
+一些小事故，足以让人看到自己和 linux 运维的水平差异。。。
