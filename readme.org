@@ -1,3 +1,7 @@
 #+TITIE: 个人博客站
+#+AUTHOR: Pilrymage
+#+DATE: [2023-10-26 Thu]
+#+TAGS: Emacs, Org Mode, 博客
 
 此处应有一个自主建设的博客站，但是我太懒了，现在就是把html文本打印出来这样子
+

@@ -1,0 +1,4 @@
+#+TITLE: Pilrymage
+
+- [[file:balding.org][男性秃头，发质细软塌的对策]]
+- [[file:理论法.org][理论法（大文本测试）]]
