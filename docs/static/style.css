@@ -1,4 +1,4 @@
-  #content { max-width: 60em; margin: auto; }
+#content { max-width: 60em; margin: auto; font-family: "思源宋体 CN", "Microsoft YaHei"; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -143,12 +143,13 @@
   th.org-left   { text-align: center;   }
   th.org-center { text-align: center; }
   td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
+  td.org-left   { text-align: left;  }
   td.org-center { text-align: center; }
   dt { font-weight: bold; }
   .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
+  img { width: 80%; }
   .figure p { text-align: center; }
   .equation-container {
     display: table;
