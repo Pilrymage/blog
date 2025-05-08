@@ -32,7 +32,7 @@
          ;; :force t
          :base-directory ,(expand-file-name  "./src" my-org-publish-root)        ; 文件目录
          :base-extension "org"
-         :publishing-directory "./public_html" ; 存放目录
+         :publishing-directory "./docs" ; 存放目录
          :section-numbers nil                          ;显示章节编号
          :with-toc t
          :with-tags t
@@ -56,12 +56,12 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :recursive t
          :publishing-function org-publish-attachment
-         :publishing-directory "./public_html"
+         :publishing-directory "./docs"
          )
         ("sitemap"
          :base-directory ,(expand-file-name  "./src" my-org-publish-root)
          :base-extension "org"
-         :publishing-directory "./public_html" ; 存放目录
+         :publishing-directory "./docs" ; 存放目录
          :publishing-function org-html-publish-to-html ;使用org-html生成HTML
          :time-stamp-file nil
          :include ("index.org")
