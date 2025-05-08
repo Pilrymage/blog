@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-08 Thu 17:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Windows 资源</title>
+<meta name="generator" content="Org Mode" />
+
+<link rel="stylesheet" href="./static/style.css" type="text/css"/>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+
+ <nav>
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <!-- <li><a href="./rss.xml">RSS</a></li> -->
+    <li><a href="https://github.com/Pilrymage/">GitHub</a></li>
+  </ul>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Windows 资源</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf6e2a9e">1. Windows / Office 激活</a></li>
+<li><a href="#org67adcb2">2. 下载 Windows/Office</a></li>
+<li><a href="#orgc9c57e9">3. Windows 软件管理 in 2025</a></li>
+<li><a href="#org242f76e">4. Windows 软件推荐</a></li>
+<li><a href="#org8dcdf38">5. Office 教程</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf6e2a9e" class="outline-2">
+<h2 id="orgf6e2a9e"><span class="section-number-2">1.</span> Windows / Office 激活</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+打开 Windows Powershell 然后执行：
+</p>
+<pre class="example">
+irm https://get.activated.win | iex
+</pre>
+
+<p>
+使用 HWID 激活 Windows，使用 Ohook 激活 Office。
+</p>
+</div>
+</div>
+<div id="outline-container-org67adcb2" class="outline-2">
+<h2 id="org67adcb2"><span class="section-number-2">2.</span> 下载 Windows/Office</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<b>Win10 Enterprise IoT LTSC 2021</b> is all you need.
+</p>
+<ul class="org-ul">
+<li>🉑安全更新到2032年，让微软多修几年Win11。<br />
+对比：企业LTSC版支持到2027年，企业物联网LTSC版又多五年支持</li>
+<li>没有多余应用，等同于精简版；<br />
+预安装Edge浏览器和Win32系统应用。</li>
+<li>与LTSC在二进制水平上完全相同，除了没有 MS Store。<br />
+下载MS Store： <code>wsreset -i</code> 。
+或者，安装 <code>winget</code> 和 <code>scoop</code> 管理一切。</li>
+<li>可手动安装安全更新</li>
+</ul>
+
+<p>
+<b>Win11 Enterprise IoT LTSC 2024</b>
+</p>
+<ul class="org-ul">
+<li>与 Win10 IoT LTSC 很像</li>
+<li>使用 React Native 重写 UI (???)</li>
+<li>这个 <b>Intel 12 代以上的大小核调度</b> 是不是非要不可，然后可以考虑这一版</li>
+<li>否则就等着 IoT LTSC 2027 吧</li>
+</ul>
+
+
+<p>
+其他Win10/Win11 家庭版/专业版/教育版/企业版/企业版IoT
+</p>
+<ul class="org-ul">
+<li>预安装Edge, Win32系统应用，MS Store，OneDrive, 天气，电影，音乐，Candy Crush，等等</li>
+<li>特性更新时自动更新应用</li>
+<li>仅1.5~3年支持</li>
+<li>强制更新</li>
+</ul>
+
+
+<p>
+Office 版本
+</p>
+<pre class="example" id="orgfb543cb">
+Microsoft 365 优于 Office 2024，因为它包含只有 365 才提供的以下功能。
+- PowerPoint 中的设计器
+- Word 中的 Microsoft 编辑器
+- Excel 中的最新公式
+- 高级字体和图标
+- 辅助功能增强
+Microsoft 365 会定期接收更新，所有应用程序都会获得新功能和改进。相比之下，Office 2024 仅接收安全更新，没有新增功能。
+  -- Massgrave
+</pre>
+
+<p>
+下载地址：<a href="https://massgrave.dev/genuine-installation-media">Download Windows / Office | MAS</a> 
+</p>
+</div>
+</div>
+<div id="outline-container-orgc9c57e9" class="outline-2">
+<h2 id="orgc9c57e9"><span class="section-number-2">3.</span> Windows 软件管理 in 2025</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+从 WinXP 时野蛮生长的软件安装，
+目前已经产生了安装速度、安全来源与可复现构建等多方面的困扰。
+Linux 比 Windows 好就好在有一个包管理器，
+而坑也就坑在不同发行版都有自己的包管理器。
+好在现在 Windows 的可用包管理器与 Win10 和 Powershell 结合得很好，
+</p>
+
+<ul class="org-ul">
+<li><a href="https://chocolatey.org/">Chocolatey</a> 是Windows 的经典软件包管理器。您可以在其中找到所有需要的东西。</li>
+<li><a href="https://scoop.sh/">Scoop</a> 包含不知名但有用的实用程序和其它有趣软件包的重要存储库。</li>
+<li><a href="https://github.com/microsoft/winget-cli">Winget</a> 是微软的官方软件包管理器。拥有知名的、经过验证的众多软件包。</li>
+</ul>
+
+<p>
+<a href="https://github.com/marticliment/UniGetUI">UniGetUI</a>则是包管理器的 UI 界面，个人感觉等于把包管理器大一统了……
+</p>
+
+
+
+<div id="org5c1768b" class="figure">
+<p><img src="Windows_软件管理_in_2025/2025-05-08_17-02-45_screenshot.png" alt="2025-05-08_17-02-45_screenshot.png" />
+</p>
+</div>
+
+<p>
+建议 UniGetUI 多用吧。
+</p>
+</div>
+</div>
+<div id="outline-container-org242f76e" class="outline-2">
+<h2 id="org242f76e"><span class="section-number-2">4.</span> Windows 软件推荐</h2>
+</div>
+<div id="outline-container-org8dcdf38" class="outline-2">
+<h2 id="org8dcdf38"><span class="section-number-2">5.</span> Office 教程</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+很多 Office 的知识点是面向计算机二级的；
+非科班的玩不来电脑，计算机科班的又不考计算机二级。
+但是计算级二级水平的 Office 知识对计算机科班而言同样必要，
+这样至少不会因为玩不来 Word 排版而选择梭哈 \(\LaTeX\) ，
+反过来歧视 Word 怎样地劳心费力，不如 \(\LaTeX\) 一根。
+</p>
+
+<p>
+推荐（付费视频）教程：<a href="https://space.bilibili.com/18211708/pugv?defaultTab=cheese">向天歌的PPT/Excel/Word大神上分攻略</a>。<br />
+配套电子书教材：PPT之光/Excel之光/Word之光。
+</p>
+<pre class="example">
+我曾拜读过 Oeasy 老师的教程，现在就感觉这玩意还是太老了且缺乏体系，
+拿出来个系统是 Windows Vista，Office 2007。
+虽然我也曾认为 Office 2003 是 Golden Standard，
+可能只是因为与 WinXP 和华军软件园更搭配。
+</pre>
+
+
+<p>
+举例如 Word 教程的一些我认为有必要学习的知识点：
+</p>
+<ul class="org-ul">
+<li><b>样式</b> 作为结构化排版的基础</li>
+<li><b>尾注</b> ， <b>页眉页脚</b> ， <b>表格</b> 都是写作论文的细节</li>
+<li><b>查找与替换</b> ，大家都很熟悉正则表达式吧，Word 也有这种东西</li>
+<li><b>邮件合并</b> 虽然听上去很没用，但也是计算机二级的考点，还有一些妙用</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<p class="author">Author: <a href="mailto:pilrymage@gmail.com"></a></p>
+<p class="date">Date: 2025-05-08 Thu 00:00</p>
+<p class="license">License: <a href="https://www.creativecommons.org/licenses/by-nc/4.0/deed.zh-hans">CC BY-NC 4.0</a></p>
+<!--<script src="https://utteranc.es/client.js" repo="Spike-Leung/taxodium" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>-->
+</div>
+</body>
+</html>
