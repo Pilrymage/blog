@@ -1,24 +1,76 @@
-#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
-#+options: author:t broken-links:nil c:nil creator:nil
-#+options: d:(not "LOGBOOK") date:t e:t email:nil expand-links:t f:t
-#+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
-#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t 
-#+title: Windows 资源
-#+date: <2025-05-08 Thu>
-#+author:
-#+email: pilrymage@PILRYMAGE
-#+language: en
-#+select_tags: export
-#+exclude_tags: noexport
-#+creator: Emacs 30.1 (Org mode 9.8-pre)
-#+cite_export:
+#+hugo_base_dir: ../
 
-* Windows / Office 激活
+* DONE About                                                      :tag1:@vip1:
+CLOSED: [2025-08-19 Tue 21:35]
+:PROPERTIES:
+:EXPORT_FILE_NAME: about
+:END:
+个人博客，存放一些个人阅读归纳或翻译的内容。
+
+- TG: [[https://t.me/wugwugs][每日智商测试]]
+* DONE 男性秃头，发质细软塌的对策                                        :med:
+CLOSED: [2025-08-19 Tue 21:41]
+:PROPERTIES:
+:EXPORT_FILE_NAME: balding
+:END:
+** 引子
+男生发型不好，可以剪可以染烫，但是头发没了就真的没办法了。不重视发型是大多国男的缺憾之一。
+如果头发打湿后肉眼可见头皮，则头发肯定是太过细软了，是脱发的前兆。
+细软发质本就显得头发稀少，根本留不了发型，脱发后更是对二十岁的人打击甚大。
+
+发质细软乃至秃顶，本质上是头发毛囊逐渐退化而闭合，生发的能力越来越弱。
+毛囊闭合是不可逆的，这种情况只好植发。
+而更多人正是在出现脱发时才注意到要保护头发，可惜为时已晚。
+
+目前证明有效的制止脱发，主要靠三样：
+- 药片：非那雄胺(Finasteride)，或是度他雄胺(Dutasteride)
+- 洗剂：米那地尔
+- 洗发水：酮康唑
+
+** 非那雄胺·度他雄胺
+
+: 雄激素性脱发[1]（androgenetic alopecia，AGA）[2]俗称早秃[3]，旧时误称脂溢性脱发，
+: 是前额上部或头顶部头发逐渐稀少，最后头皮光滑或有少许细毛，有时合并皮脂溢出，多见于男性。 
+
+非那雄胺的原理是，压制双氢睾酮（DHT）的生成，减少其对毛囊的作用。
+男性更易脱发，关键在于睾酮部分地(10%)转化为DHT，
+而DHT主要起到第二性征发育的作用，过了青春期后只能产生让人毛囊收缩消失的后果。
+非那雄胺是一种 5-alpha 还原酶(5ar)抑制剂，通过阻止 5-alpha 还原酶将睾酮转化为DHT实现减缓雄脱。
+由此，非那雄胺更多是阻止继续掉发，或许能稍微恢复一点头发，也有些人的生发效果很好。
+
+5ar 抑制剂对剂量不敏感，0.2mg 用量可以减少 68% 的DHT， 5mg 用量可以减少 72% 的DHT。
+度他雄胺的效果更强，0.5mg 用量可以减少 95% 的 DHT，但是会更贵一些。
+度他雄胺的半衰期为8小时，每天吃一片，疗程三个月。
+
+非那雄胺长期用于治疗前列腺增生，对人的副作用与效果已经被研究得很明白了，
+我的外公也吃非那雄胺，他是治前列腺不行，老人漏尿的。
+但有1-2%的可能性会导致ED。说实话对于
+可以通过减少摄入药物等来避免。保法止1mg 足以起到防脱发作用。
+
+** 米那地尔
+米那地尔(Minoxidil)通过打开钾离子通道，扩张头顶毛囊血管从而刺激毛发生长期。
+米那地尔配合非那雄胺来恢复头发，在脱发早期（NW2期之前）最有效果。
+
+** 酮康唑
+
+** 雌激素
+
+抗雄激素：螺内酯(spirolactone) 通过抑止睾酮，从而抑止DHT。
+雌激素：戊酸雌二醇，用于补充雌激素，防止性激素紊乱。
+
+注意这些药用于男性转女性的激素替代疗法，比5ar抑制剂更加容易导致性功能问题。
+但是，的确有人为了有女性一样的发质而吃抗雄激素与雌激素。
+* DONE Windows 资源汇总                                           :fwt:@g:
+CLOSED: [2025-08-19 Tue 21:45]
+:PROPERTIES:
+:EXPORT_FILE_NAME: windows
+:END:
+** Windows / Office 激活
 打开 Windows Powershell 然后执行：
 : irm https://get.activated.win | iex
 使用 HWID 激活 Windows，使用 Ohook 激活 Office。
 
-* 下载 Windows/Office
+** 下载 Windows/Office
 :PROPERTIES:
 :ID:       6c998a2d-4e94-4d8d-b435-5cd02c9001bb
 :END:
@@ -59,7 +111,7 @@ Microsoft 365 会定期接收更新，所有应用程序都会获得新功能和
 #+end_example
 
 下载地址：[[https://massgrave.dev/genuine-installation-media][Download Windows / Office | MAS]] 
-* Windows 软件管理 in 2025
+** Windows 软件管理 in 2025
 :PROPERTIES:
 :ID:       d00ec9c7-4391-4ec4-8bcb-a510fa70668e
 :END:
@@ -80,8 +132,8 @@ Linux 比 Windows 好就好在有一个包管理器，
 [[file:Windows_软件管理_in_2025/2025-05-08_17-02-45_screenshot.png]]
 
 建议 UniGetUI 多用吧。
-* Windows 软件推荐
-* Office 教程
+** Windows 软件推荐
+** Office 教程
 很多 Office 的知识点是面向计算机二级的；
 非科班的玩不来电脑，计算机科班的又不考计算机二级。
 但是计算级二级水平的 Office 知识对计算机科班而言同样必要，
@@ -100,4 +152,3 @@ Linux 比 Windows 好就好在有一个包管理器，
 - *尾注* ， *页眉页脚* ， *表格* 都是写作论文的细节
 - *查找与替换* ，大家都很熟悉正则表达式吧，Word 也有这种东西
 - *邮件合并* 虽然听上去很没用，但也是计算机二级的考点，还有一些妙用
-
