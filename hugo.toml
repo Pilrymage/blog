@@ -16,4 +16,7 @@ title = 'My New Hugo Site'
           inline = [['\(', '\)']]
 [params]
   math = true
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
   
