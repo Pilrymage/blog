@@ -1,21 +1,44 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://pilrymage.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'pilrymage'
 [module]
   [[module.imports]]
     path = "github.com/adityatelange/hugo-PaperMod"
+[markup.highlight]
+  codeFences = true
 [markup.goldmark.renderer]
   unsafe = true
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
+[markup.goldmark.extensions.passthrough]
+  enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['\[', '\]'], ['$$', '$$']]
+  inline = [['\(', '\)']]
+
+[[menu.main]]
+  name = "About"
+  url = "about"
+
+[[menu.main]]
+  name = "Posts"
+  url = "posts"
+
+
 [params]
   math = true
+
+  [params.homeInfoParams]
+    Title = "Paper Moon"
+    Content = "😇 Have a nice life..."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/Pilrymage"
+
+  [[params.socialIcons]]
+    name = "Telegram"
+    url = "https://t.me/wugwugs"
+  
+  
 [caches]
   [caches.images]
     dir = ':cacheDir/images'

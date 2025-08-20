@@ -1,10 +1,12 @@
 #+hugo_base_dir: ../
 
-* DONE About                                                      :tag1:@vip1:
+* DONE About                
 CLOSED: [2025-08-19 Tue 21:35]
 :PROPERTIES:
+:EXPORT_HUGO_SECTION: /
 :EXPORT_FILE_NAME: about
 :END:
+
 个人博客，存放一些个人阅读归纳或翻译的内容。
 
 - TG: [[https://t.me/wugwugs][每日智商测试]]
