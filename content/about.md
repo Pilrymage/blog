@@ -49,7 +49,7 @@ Other techs I've learned:
 
 <!--listend-->
 
--   [Entertainment]()
+-   Entertainment
 
 
 ## Battlestation Now {#battlestation-now}

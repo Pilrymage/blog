@@ -44,7 +44,7 @@ Other techs I've learned:
   + *Medical*: anatomy
   + *Law*: legal theory
 #  + *Finance*:
-- [[Entertainment]]
+- Entertainment
 
 ** Battlestation Now
 - *Dell G15* with RTX 3060 Laptop, *Windows 10 IoT LTSC*.
@@ -54,9 +54,18 @@ Other techs I've learned:
   Still a desktop is preferred, so that my 16TB HDD can directly put in.
   (2025.8.20)
     
-* Entertainment
+* DONE Search
+CLOSED: [2025-08-24 Sun 17:25]
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:EXPORT_FILE_NAME: search
+:END:
 
-
+#+begin_src toml :front_matter_extra t
+  layout = "search"
+  summary = "search"
+  placeholder = "进行搜索……"
+#+end_src
 * DONE 男性秃头，发质细软塌的对策                                        :med:
 CLOSED: [2025-08-19 Tue 21:41]
 :PROPERTIES:
@@ -176,9 +185,7 @@ Linux 比 Windows 好就好在有一个包管理器，
 
 [[https://github.com/marticliment/UniGetUI][UniGetUI]]则是包管理器的 UI 界面，个人感觉等于把包管理器大一统了……
 
-
-#+DOWNLOADED: screenshot @ 2025-05-08 17:02:45
-[[file:Windows_软件管理_in_2025/2025-05-08_17-02-45_screenshot.png]]
+[[file:img/2025-05-08_17-02-45_screenshot.png]]
 
 建议 UniGetUI 多用吧。
 ** Windows 软件推荐

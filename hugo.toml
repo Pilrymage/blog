@@ -22,6 +22,14 @@ title = 'pilrymage'
   name = "Posts"
   url = "posts"
 
+[[menu.main]]
+  name = "Review"
+  url = "reviews"
+
+[[menu.main]]
+  name = "Search"
+  url = "search"
+
 
 [params]
   math = true
@@ -38,8 +46,22 @@ title = 'pilrymage'
     name = "Telegram"
     url = "https://t.me/wugwugs"
   
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    keys = ["title", "permalink", "summary", "content"]
+  
   
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
   
+[taxonomies]
+  genre = "genres"
+  recommendation = "recommendations"
+
+[outputs]
+  # home = ["HTML", "RSS", "JSON"]

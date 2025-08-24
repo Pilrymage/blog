@@ -1,0 +1,50 @@
+{{ define "main" }}
+<article class="review-single">
+  <header class="review-header">
+    <div class="review-container">
+      <div class="rh-row-1">
+        <div class="rh-title-block">
+          <p class="rh-media-type">{{ .Params.media_type | upper }}</p>
+          <h1>{{ .Title }}</h1>
+          <h2>{{ .Params.creator }}</h2>
+        </div>
+        <div class="rh-cover-score-block">
+          <div class="rh-score-wrapper">
+            <div class="rh-score-circle">
+              <span>{{ .Params.score }}</span>
+            </div>
+            {{ if .Params.recommended }}
+              <div class="rh-recommendation">
+                {{ index .Params.recommendation 0 }}
+              </div>
+            {{ end }}
+            
+          </div>
+          <img src="{{ .Params.cover | relURL }}" alt="Cover for {{ .Title }}" class="rh-cover-image">
+        </div>
+      </div>
+
+      <div class="rh-row-2">
+        <span class="rh-meta">By {{ .Site.Author.name | default "Pilrymage" }}</span>
+        <span class="rh-meta-divider">|</span>
+        <span class="rh-meta">
+          <strong>GENRE:</strong> 
+          {{ delimit .Params.genres ", " }}
+        </span>
+        <span class="rh-meta-divider">|</span>
+        <span class="rh-meta"><strong>REVIEWED:</strong> {{ .Date.Format "January 2, 2006" }}</span>
+      </div>
+
+      <div class="rh-row-3">
+        <p class="rh-summary">{{ .Params.summary }}</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="review-content">
+    <div class="review-container">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

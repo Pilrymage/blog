@@ -1,0 +1,46 @@
+{{ define "main" }}
+<main class="review-archive">
+  <div class="review-container">
+    <header class="review-archive-header">
+      <h1>Albums</h1>
+      <nav class="review-archive-nav">
+        <ul>
+          <li><a href="{{ .Permalink }}" class="active">Albums</a></li>
+          <!-- <li><a href="{{ "/recommendations/best-new-music/" | relURL }}">Best New Music</a></li>
+          <li><a href="{{ "/recommendations/best-new-reissue/" | relURL }}">Best New Reissues</a></li> -->
+          <!-- <li><a href="#">8.0+ Reviews</a></li>
+          <li><a href="#">Sunday Reviews</a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <div class="review-grid">
+      {{/* 对当前 section 的页面进行分页处理 */}}
+      {{ $paginator := .Paginate .Pages }}
+      {{ range $paginator.Pages }}
+        <article class="review-card">
+          <a href="{{ .Permalink }}" class="review-card-link">
+            <div class="review-card-image-wrapper">
+              <img src="{{ .Params.cover | relURL }}" alt="Cover for {{ .Title }}">
+            </div>
+            <div class="review-card-content">
+              {{/* 如果有推荐标签，则显示 */}}
+              {{ if .Params.recommended }}
+                <p class="review-card-recommendation">
+                  {{ range .Params.recommendation }}{{ . }}{{ end }}
+                </p>
+              {{ end }}
+              <p class="review-card-genre">{{ index .Params.genres 0 }}</p>
+              <h2 class="review-card-title">{{ .Title }}</h2>
+              <p class="review-card-creator">{{ .Params.creator }}</p>
+            </div>
+          </a>
+        </article>
+      {{ end }}
+    </div>
+
+    {{/* 引入 Hugo 内置的分页模板 */}}
+    {{ partial "pagination.html" . }}
+  </div>
+</main>
+{{ end }}
