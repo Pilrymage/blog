@@ -64,4 +64,4 @@ title = 'pilrymage'
   recommendation = "recommendations"
 
 [outputs]
-  # home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON"]
