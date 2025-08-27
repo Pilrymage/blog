@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="review-single">
   <header class="review-header">
-    <div class="review-container">
+    <div >
       <div class="rh-row-1">
         <div class="rh-title-block">
           <p class="rh-media-type">{{ .Params.media_type | upper }}</p>
@@ -21,7 +21,9 @@
             {{ end }}
             
           </div>
-          <img src="{{ .Params.cover.image | relURL }}" alt="Cover for {{ .Title }}" class="rh-cover-image">
+          <a href="{{ .Params.cover.target }}">
+            <img src="{{ .Params.cover.image | relURL }}" alt="Cover for {{ .Title }}" class="rh-cover-image">
+          </a>
         </div>
       </div>
 

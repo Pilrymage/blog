@@ -66,6 +66,16 @@ CLOSED: [2025-08-24 Sun 17:25]
   summary = "search"
   placeholder = "进行搜索……"
 #+end_src
+
+* DONE All Reviews
+CLOSED: [2025-08-24 Sun 17:25]
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /reviews
+:EXPORT_FILE_NAME: _index.md
+:END:
+
+#+begin_src toml :front_matter_extra t
+#+end_src
 * DONE 男性秃头，发质细软塌的对策                                        :med:
 CLOSED: [2025-08-19 Tue 21:41]
 :PROPERTIES:
