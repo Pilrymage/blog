@@ -21,7 +21,7 @@
         <article class="review-card">
           <a href="{{ .Permalink }}" class="review-card-link">
             <div class="review-card-image-wrapper">
-              <img src="{{ .Params.cover | relURL }}" alt="Cover for {{ .Title }}">
+              <img src="{{ .Params.cover.image | relURL }}" alt="Cover for {{ .Title }}">
             </div>
             <div class="review-card-content">
               {{/* 如果有推荐标签，则显示 */}}

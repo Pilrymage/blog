@@ -22,7 +22,6 @@ recommended = true
 recommend_type = "Best New Music"
 #+end_src
 
-
 * DONE Skintone Edition Volume 1
 CLOSED: [2025-08-24 Sun 16:26]
 :PROPERTIES:
@@ -34,9 +33,6 @@ CLOSED: [2025-08-24 Sun 16:26]
   creator = "Susumu Yokota" # 创作者 (艺术家/开发商/导演/作者)
   creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
   release_date = "2025-08-25" # 作品发行/上映日期
-
-  # --- 评论特定信息 ---
-  cover = "/images/Skintone-Edition-Volume-1.webp"
   score = 9.0 # 评分
   summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
 
@@ -44,6 +40,9 @@ CLOSED: [2025-08-24 Sun 16:26]
   genres = ["Electronic", "Ambient"]
   recommended = true
   recommendations = ["Best New Music"]
+  # --- 评论特定信息 ---
+  [cover]
+  image = "/images/Skintone-Edition-Volume-1.webp"
 #+end_src
 
 评测正文
@@ -55,20 +54,21 @@ CLOSED: [2025-08-24 Sun 16:28]
 :END:
 
 #+begin_src toml :front_matter_extra t
-media_type =  "music" # 作品类型 (music, game, movie, book)
-creator = "Nala Sinephro" # 创作者 (艺术家/开发商/导演/作者)
-creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
-release_date = "2024-09-01" # 作品发行/上映日期
+  media_type =  "music" # 作品类型 (music, game, movie, book)
+  creator = "Nala Sinephro" # 创作者 (艺术家/开发商/导演/作者)
+  creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
+  release_date = "2024-09-01" # 作品发行/上映日期
 
-# --- 评论特定信息 ---
-cover = "/images/Nala-Sinephro-Endlessness.webp" # 封面图片路径
-score = 8.5 # 评分
-summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
+  # --- 评论特定信息 ---
+  score = 8.5 # 评分
+  summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
 
-# --- 分类与标签 ---
-genres = ["Jazz", "Experimental", "Ambient"]
-recommended = true
-recommendations = ["Best New Music"]
+  # --- 分类与标签 ---
+  genres = ["Jazz", "Experimental", "Ambient"]
+  recommended = true
+  recommendations = ["Best New Music"]
+[cover]
+  image = "/images/Nala-Sinephro-Endlessness.webp" # 封面图片路径
 #+end_src
 
 评测正文2 text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?
