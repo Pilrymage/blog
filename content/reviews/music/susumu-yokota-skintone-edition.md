@@ -1,7 +1,6 @@
 +++
 title = "Skintone Edition Volume 1"
-date = 2025-08-24T16:26:00+08:00
-draft = false
+draft = true
 media_type =  "music" # 作品类型 (music, game, movie, book)
 creator = "Susumu Yokota" # 创作者 (艺术家/开发商/导演/作者)
 creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
@@ -15,7 +14,7 @@ recommended = true
 recommendations = ["Best New Music"]
 # --- 评论特定信息 ---
 [cover]
-  image = "/images/Skintone-Edition-Volume-1.webp"
+image = "/images/Skintone-Edition-Volume-1.webp"
 +++
 
 评测正文

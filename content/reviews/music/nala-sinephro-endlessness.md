@@ -1,7 +1,6 @@
 +++
 title = "Endlessness"
-date = 2025-08-24T16:28:00+08:00
-draft = false
+draft = true
   media_type =  "music" # 作品类型 (music, game, movie, book)
   creator = "Nala Sinephro" # 创作者 (艺术家/开发商/导演/作者)
   creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)

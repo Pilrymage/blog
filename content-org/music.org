@@ -1,0 +1,158 @@
+#+hugo_base_dir: ../
+#+hugo_section: reviews/music
+
+* TODO Template
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+
+#+begin_src toml :front_matter_extra t
+media_type =  "music" # 作品类型 (music, game, movie, book)
+creator = "Nala Sinephro" # 创作者 (艺术家/开发商/导演/作者)
+creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
+release_date = "2024-09-01" # 作品发行/上映日期
+
+# --- 评论特定信息 ---
+score = 8.5 # 评分
+summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
+
+# --- 分类与标签 ---
+genres = ["Jazz", "Experimental", "Ambient"]
+recommended = true
+recommend_type = "Best New Music"
+#+end_src
+
+* TODO Skintone Edition Volume 1
+:PROPERTIES:
+:EXPORT_FILE_NAME: susumu-yokota-skintone-edition
+:END:
+
+#+begin_src toml :front_matter_extra t
+media_type =  "music" # 作品类型 (music, game, movie, book)
+creator = "Susumu Yokota" # 创作者 (艺术家/开发商/导演/作者)
+creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
+release_date = "2025-08-25" # 作品发行/上映日期
+score = 9.0 # 评分
+summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
+
+# --- 分类与标签 ---
+genres = ["Electronic", "Ambient"]
+recommended = true
+recommendations = ["Best New Music"]
+# --- 评论特定信息 ---
+[cover]
+image = "/img/music/Skintone-Edition-Volume-1.webp"
+#+end_src
+
+评测正文
+
+* TODO Endlessness
+:PROPERTIES:
+:EXPORT_FILE_NAME: nala-sinephro-endlessness
+:END:
+
+#+begin_src toml :front_matter_extra t
+  media_type =  "music" # 作品类型 (music, game, movie, book)
+  creator = "Nala Sinephro" # 创作者 (艺术家/开发商/导演/作者)
+  creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
+  release_date = "2024-09-01" # 作品发行/上映日期
+
+  # --- 评论特定信息 ---
+  score = 8.5 # 评分
+  summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
+
+  # --- 分类与标签 ---
+  genres = ["Jazz", "Experimental", "Ambient"]
+  recommended = true
+  recommendations = ["Best New Music"]
+[cover]
+  image = "/img/music/Nala-Sinephro-Endlessness.webp" # 封面图片路径
+#+end_src
+
+评测正文2 text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus voluptatum cum fugiat sequi veniam voluptatem reiciendis autem quaerat rem sunt sit omnis ut dicta quasi, molestias, exercitationem incidunt commodi?
+* The Powers That B
+:PROPERTIES:
+:EXPORT_FILE_NAME: the-powers-that-b
+:END:
+
+#+begin_src toml :front_matter_extra t
+date = 2024-09-11
+  media_type =  "music" # 作品类型 (music, game, movie, book)
+  creator = "Death Grips" # 创作者 (艺术家/开发商/导演/作者)
+  creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
+  release_date = "1993-09-01" # 作品发行/上映日期
+
+  # --- 评论特定信息 ---
+  score = 8.5 # 评分
+  # summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
+
+  # --- 分类与标签 ---
+  genres = ["hip.hop", "experimental", "electronic"]
+  recommended = true
+  # recommendations = ["Best New Music"]
+  [cover]
+  image = "https://ptpimg.me/8ofn1f.jpg" # 封面图片路径
+#+end_src
+评论
+* Enter the Wu-Tang (36 Chambers)
+:PROPERTIES:
+:EXPORT_FILE_NAME: enter-the-wu-tang-36-chambers
+:END:
+#+begin_src toml :front_matter_extra t
+date = 2024-09-11
+media_type =  "music" # 作品类型 (music, game, movie, book)
+creator = "Wu-Tang Clan" # 创作者 (艺术家/开发商/导演/作者)
+creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
+release_date = "1993" # 作品发行/上映日期
+
+# --- 评论特定信息 ---
+score = 8.5 # 评分
+
+# --- 分类与标签 ---
+genres = ["hip.hop", "1990s", "east.coast.hip.hop"]
+recommended = true
+# recommendations = ["Best New Music"]
+# summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
+[cover]
+image = "https://ptpimg.me/v6ctgi.jpg" # 封面图片路径
+#+end_src
+* Aquemini
+:PROPERTIES:
+:EXPORT_FILE_NAME: aquemini
+:END:
+#+begin_src toml :front_matter_extra t
+date = 2025-08-27 # 评分时间
+media_type =  "music" # 作品类型
+creator = "Outkast" # 创作者
+creator_label = "LaFace Records" # 厂牌
+release_date = "1998" # 作品发行/上映日期
+score = 8.5 # 分数
+
+genres = ["hip.hop"]
+recommended = true
+recommendations = []
+summary = ""
+[cover]
+image = "https://ptpimg.me/ux36rp.jpg"
+#+end_src
+* ✝ (Cross)
+:PROPERTIES:
+:EXPORT_FILE_NAME: cross
+:END:
+#+begin_src toml :front_matter_extra t
+date = 2025-08-27 # 评分时间
+media_type =  "music" # 作品类型
+creator = "Justice" # 创作者
+creator_label = "Ed Banger Records" # 厂牌
+release_date = "2007" # 作品发行/上映日期
+score = 8.5 # 分数
+
+genres = ["electro.house", "french.house"]
+recommended = true
+recommendations = []
+summary = ""
+[cover]
+image = "https://ptpimg.me/d61jj7.jpg"
+#+end_src

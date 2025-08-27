@@ -41,7 +41,7 @@ Other techs I've learned:
         Output Simplified Chinese, Can read Traditional Chinese fluently;
         **Cantonese** (Just for fun).
     -   **English** (B2+ by passing [CET-6](https://en.wikipedia.org/wiki/College_English_Test) with 570 point), also watch English TV operas.
-    -   **Japanese** (B2 by passing [JLPT N1](https://en.wikipedia.org/wiki/Japanese-Language_Proficiency_Test))
+    -   **Japanese** (~~B2 by passing [JLPT N1](https://en.wikipedia.org/wiki/Japanese-Language_Proficiency_Test)~~ B1 by N1 89 points which still failed :-( )
     -   Learning French, Korean and Russian, still at alphabet. Seriously it takes time and effort.
 -   Another major course
     -   **Medical**: anatomy
