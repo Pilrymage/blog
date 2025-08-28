@@ -20,7 +20,7 @@
     </header>
 
     <div class="review-grid">
-      {{ $paginator := .Paginate .Pages }}
+      {{ $paginator := .Paginate .Pages 12 }}
       {{ range $paginator.Pages }}
         {{/* Add a dynamic class based on the media_type front matter */}}
         <article class="review-card">
