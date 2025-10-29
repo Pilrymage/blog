@@ -1,53 +1,148 @@
 {{ define "main" }}
-<article class="review-single">
-  <header class="review-header">
-    <div >
-      <div class="rh-row-1">
-        <div class="rh-title-block">
-          <p class="rh-media-type">{{ .Params.media_type | upper }}</p>
-          <h1>{{ .Title }} </h1>
-          <h2>{{ .Params.creator }}</h2>
-          <h3><em>{{ .Params.release_date }}</em></h3>
+  {{ $cover := .Params.cover | default dict }}
+  {{ $coverImage := "" }}
+  {{ with $cover.image }}{{ $coverImage = . }}{{ end }}
+  {{ $coverTarget := "" }}
+  {{ with $cover.target }}{{ $coverTarget = . }}{{ end }}
+  {{ $coverAspect := "" }}
+  {{ with $cover.aspect }}{{ $coverAspect = replace . ":" " / " }}{{ end }}
+
+  {{ $scoreValue := "" }}
+  {{ with .Params.score }}
+    {{ $scoreValue = printf "%.1f" (float .) }}
+  {{ end }}
+
+  {{ $recommendationLabel := "" }}
+  {{ with .Params.recommendations }}
+    {{ if gt (len .) 0 }}
+      {{ $recommendationLabel = index . 0 }}
+    {{ end }}
+  {{ end }}
+  {{ if and (eq $recommendationLabel "") .Params.recommend_type }}
+    {{ $recommendationLabel = .Params.recommend_type }}
+  {{ end }}
+  {{ if and (eq $recommendationLabel "") .Params.recommended }}
+    {{ $recommendationLabel = "精選推薦" }}
+  {{ end }}
+
+  {{ $mediaType := .Params.media_type }}
+  {{ $creator := .Params.creator }}
+  {{ $creatorLabel := .Params.creator_label }}
+  {{ $release := .Params.release_date }}
+  {{ $genres := .Params.genres | default slice }}
+  {{ $duration := .Params.duration }}
+  {{ $region := .Params.region }}
+  {{ $language := .Params.language }}
+
+  <article class="content-article review-article">
+    <header class="review-hero">
+      <div class="review-hero__media" {{ if $coverAspect }}style="--review-cover-aspect: {{ $coverAspect }};"{{ end }}>
+        {{ if $coverImage }}
+          {{ if $coverTarget }}
+            <a class="review-hero__media-link" href="{{ $coverTarget }}" target="_blank" rel="noopener">
+              <img src="{{ $coverImage }}" alt="{{ printf "%s 封面" .Title }}" loading="lazy">
+            </a>
+          {{ else }}
+            <img src="{{ $coverImage }}" alt="{{ printf "%s 封面" .Title }}" loading="lazy">
+          {{ end }}
+        {{ else }}
+          <div class="review-hero__media-placeholder">{{ substr .Title 0 1 }}</div>
+        {{ end }}
+      </div>
+      <div class="review-hero__details">
+        <div class="review-hero__meta">
+          {{ with $mediaType }}
+            <span class="review-hero__meta-item">{{ . | humanize }}</span>
+          {{ end }}
+          {{ with $release }}
+            <span class="review-hero__separator">·</span>
+            <span class="review-hero__meta-item">{{ . }}</span>
+          {{ end }}
+          <span class="review-hero__separator">·</span>
+          <time class="review-hero__meta-item" datetime="{{ .Date | time.Format "2006-01-02" }}">評述於 {{ .Date.Format "2006-01-02" }}</time>
         </div>
-        <div class="rh-cover-score-block">
-          <div class="rh-score-wrapper">
-            <div class="rh-score-circle">
-              <span>{{ .Params.score }}</span>
+        <h1 class="review-hero__title">{{ .Title }}</h1>
+        {{ if or $creator $creatorLabel }}
+          <p class="review-hero__creator">
+            {{- with $creator -}}
+              {{ . }}
+            {{- end -}}
+            {{- if and $creator $creatorLabel }} · {{ end -}}
+            {{- with $creatorLabel -}}
+              {{ . }}
+            {{- end -}}
+          </p>
+        {{ end }}
+        {{ with or .Params.summary .Summary }}
+          <p class="review-hero__summary">{{ . | plainify }}</p>
+        {{ end }}
+
+        <div class="review-hero__highlights">
+          {{ with $scoreValue }}
+            <div class="review-hero__score">
+              <span class="review-hero__score-label">評分</span>
+              <span class="review-hero__score-value">{{ . }}</span>
             </div>
-            {{ if .Params.recommended }}
-              <div class="rh-recommendation">
-                {{ index .Params.recommendation 0 }}
+          {{ end }}
+          {{ with $recommendationLabel }}
+            <span class="review-hero__badge">{{ . }}</span>
+          {{ end }}
+          {{ if and (not $scoreValue) $recommendationLabel }}
+            <!-- keep spacing -->
+          {{ end }}
+        </div>
+
+        <dl class="review-hero__info">
+          {{ with $genres }}
+            {{ if gt (len .) 0 }}
+              <div class="review-hero__info-item">
+                <dt>標籤</dt>
+                <dd>{{ delimit . " / " }}</dd>
               </div>
             {{ end }}
-            
-          </div>
-          <a href="{{ .Params.cover.target }}">
-            <img src="{{ .Params.cover.image | relURL }}" alt="Cover for {{ .Title }}" class="rh-cover-image">
-          </a>
-        </div>
+          {{ end }}
+          {{ with $region }}
+            <div class="review-hero__info-item">
+              <dt>地區</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+          {{ with $language }}
+            <div class="review-hero__info-item">
+              <dt>語言</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+          {{ with $duration }}
+            <div class="review-hero__info-item">
+              <dt>時長</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+          {{ if $coverTarget }}
+            <div class="review-hero__info-item">
+              <dt>官方連結</dt>
+              <dd><a href="{{ $coverTarget }}" target="_blank" rel="noopener">查看作品</a></dd>
+            </div>
+          {{ end }}
+        </dl>
       </div>
+    </header>
 
-      <div class="rh-row-2">
-        <span class="rh-meta">By {{ .Site.Author.name | default "Pilrymage" }}</span>
-        <span class="rh-meta-divider">|</span>
-        <span class="rh-meta">
-          <strong>GENRE:</strong> 
-          {{ delimit .Params.genres ", " }}
-        </span>
-        <span class="rh-meta-divider">|</span>
-        <span class="rh-meta"><strong>REVIEWED:</strong> {{ .Date.Format "January 2, 2006" }}</span>
-      </div>
-
-      <div class="rh-row-3">
-        <p class="rh-summary">{{ .Params.summary }}</p>
-      </div>
-    </div>
-  </header>
-
-  <div class="review-content">
-    <div class="review-container">
+    <div class="content-article__body review-article__body">
       {{ .Content }}
     </div>
-  </div>
-</article>
+
+    <footer class="content-article__footer review-article__footer">
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      <nav class="post-nav" aria-label="Post navigation">
+        {{ with .PrevInSection }}
+          <a class="post-nav__item prev" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+          <a class="post-nav__item next" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+      </nav>
+    </footer>
+  </article>
 {{ end }}

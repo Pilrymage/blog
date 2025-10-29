@@ -1,49 +1,136 @@
 {{ define "main" }}
-<main class="review-archive">
-  <div class="review-container">
-    <header class="review-archive-header">
-      <nav class="review-archive-nav">
-        <ul>
-          {{ $currentPage := . }}
-          {{/* Loop through the subsections of "reviews" (e.g., music, game) to create tabs */}}
-          {{ range (.Site.GetPage "section" "reviews").Sections }}
-            <li>
-              <a href="{{ .Permalink }}" class="{{ if eq .Permalink $currentPage.Permalink }}active{{ end }}">
-                {{ .Title }}
-              </a>
+  {{ $root := .Site.GetPage "section" "reviews" }}
+  {{ $sections := $root.Sections }}
+  {{ $isTopLevel := eq .Permalink $root.Permalink }}
+  <section class="reviews-archive">
+    <div class="reviews-archive__inner">
+      <header class="reviews-archive__header">
+        <h1 class="reviews-archive__title">{{ .Title }}</h1>
+        {{ with .Params.summary }}
+          <p class="reviews-archive__summary">{{ . }}</p>
+        {{ end }}
+      </header>
+
+      {{ if $isTopLevel }}
+        <div class="reviews-categories">
+          {{ range $sections.ByTitle }}
+            {{ $desc := "" }}
+            {{ if .Params.description }}
+              {{ $desc = .Params.description }}
+            {{ else if .Params.summary }}
+              {{ $desc = .Params.summary }}
+            {{ else if .Content }}
+              {{ $desc = .Content | plainify | truncate 90 }}
+            {{ else }}
+              {{ $desc = printf "共收錄 %d 篇作品評述。" (len .RegularPages) }}
+            {{ end }}
+            <a class="reviews-category-card" href="{{ .RelPermalink }}">
+              <div class="reviews-category-card__body">
+                <h2 class="reviews-category-card__title">{{ .Title }}</h2>
+                <p class="reviews-category-card__meta">{{ $desc }}</p>
+              </div>
+              <span class="reviews-category-card__count">{{ len .RegularPages }} 篇</span>
+            </a>
+          {{ end }}
+        </div>
+      {{ else }}
+        <nav class="reviews-subnav" aria-label="分類切換">
+          <ul>
+            {{ range $sections.ByTitle }}
+              <li>
+                <a href="{{ .RelPermalink }}" class="{{ if eq .Permalink $.Permalink }}is-active{{ end }}">
+                  {{ .Title }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </nav>
+
+        {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 12 }}
+        <ul class="review-listing">
+          {{ range $paginator.Pages }}
+            {{ $cover := .Params.cover | default dict }}
+            {{ $coverImage := "" }}
+            {{ with $cover.image }}{{ $coverImage = . }}{{ end }}
+            {{ $coverTarget := "" }}
+            {{ with $cover.target }}{{ $coverTarget = . }}{{ end }}
+            {{ $aspect := "" }}
+            {{ with $cover.aspect }}{{ $aspect = replace . ":" " / " }}{{ end }}
+            {{ $score := .Params.score }}
+            {{ $creator := .Params.creator }}
+            {{ $creatorLabel := .Params.creator_label }}
+            {{ $release := .Params.release_date }}
+            {{ $genres := .Params.genres | default slice }}
+            <li class="review-item">
+              <div class="review-item__media" {{ if $aspect }}style="--cover-aspect: {{ $aspect }};"{{ end }}>
+                {{ if $coverTarget }}
+                  <a href="{{ $coverTarget }}" class="review-item__cover-link" target="_blank" rel="noopener">
+                    {{ if $coverImage }}
+                      <img src="{{ $coverImage }}" alt="{{ printf "%s 的封面" .Title }}" loading="lazy">
+                    {{ else }}
+                      <span class="review-item__placeholder" aria-hidden="true">{{ substr .Title 0 1 }}</span>
+                    {{ end }}
+                  </a>
+                {{ else }}
+                  {{ if $coverImage }}
+                    <img src="{{ $coverImage }}" alt="{{ printf "%s 的封面" .Title }}" loading="lazy">
+                  {{ else }}
+                    <span class="review-item__placeholder" aria-hidden="true">{{ substr .Title 0 1 }}</span>
+                  {{ end }}
+                {{ end }}
+              </div>
+              <div class="review-item__main">
+                <div class="review-item__headline">
+                  <h2 class="review-item__title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  </h2>
+                  {{ with $score }}
+                    <span class="review-item__score">{{ printf "%.1f" . }}</span>
+                  {{ end }}
+                </div>
+                <p class="review-item__meta">
+                  {{- if $creator }}
+                    <span>{{ $creator }}</span>
+                  {{- end -}}
+                  {{- if and $creator $creatorLabel }} · {{ end -}}
+                  {{- if $creatorLabel }}
+                    <span>{{ $creatorLabel }}</span>
+                  {{- end -}}
+                  {{- if or $creator $creatorLabel $release }} · {{ end -}}
+                  {{- if $release }}
+                    <span>{{ $release }}</span>
+                  {{- end -}}
+                </p>
+                {{ with or .Summary .Params.summary }}
+                  <p class="review-item__summary">{{ . | plainify | truncate 160 }}</p>
+                {{ end }}
+                {{ if or $genres .Params.recommended }}
+                  <div class="review-item__tags">
+                    {{ if .Params.recommended }}
+                      <span class="review-item__badge">精選</span>
+                    {{ end }}
+                    {{ range $genres }}
+                      <span class="review-item__tag">{{ . }}</span>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+              <div class="review-item__cta">
+                <a class="review-item__link" href="{{ .RelPermalink }}" aria-label="{{ printf "閱讀《%s》的詳細評論" .Title }}">
+                  閱讀評述
+                  <span aria-hidden="true">→</span>
+                </a>
+                {{ if $coverTarget }}
+                  <a class="review-item__external" href="{{ $coverTarget }}" target="_blank" rel="noopener">
+                    原始作品
+                  </a>
+                {{ end }}
+              </div>
             </li>
           {{ end }}
         </ul>
-      </nav>
-      {{/* The title is now dynamic, based on the section page's title */}}
-      <h1>{{ .Title }}</h1>
-    </header>
-
-    <div class="review-grid">
-      {{ $paginator := .Paginate .Pages 12 }}
-      {{ range $paginator.Pages }}
-        {{/* Add a dynamic class based on the media_type front matter */}}
-        <article class="review-card">
-          <a href="{{ .Permalink }}" class="review-card-link">
-            <div>
-              <img src="{{ .Params.cover.image | relURL }}" alt="Cover for {{ .Title }}">
-            </div>
-            <div class="review-card-content">
-              {{ if .Params.recommended }}
-                <p class="review-card-recommendation">
-                  {{ index .Params.recommendation 0 }}
-                </p>
-              {{ end }}
-              <p class="review-card-genre">{{ index .Params.genres 0 }}</p>
-              <h2 class="review-card-title">{{ .Title }}</h2>
-              <p class="review-card-creator">{{ .Params.creator }}</p>
-            </div>
-          </a>
-        </article>
+        {{ partial "pagination.html" . }}
       {{ end }}
     </div>
-
-    {{ partial "pagination.html" . }}
-  </div>
-</main>
+  </section>
 {{ end }}
