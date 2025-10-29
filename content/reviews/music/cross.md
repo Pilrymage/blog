@@ -14,4 +14,5 @@ recommendations = []
 summary = ""
 [cover]
 image = "https://ptpimg.me/d61jj7.jpg"
+aspect = "1:1"
 +++

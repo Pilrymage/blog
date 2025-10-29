@@ -5,7 +5,7 @@ date = 2024-09-11
   media_type =  "music" # 作品类型 (music, game, movie, book)
   creator = "Death Grips" # 创作者 (艺术家/开发商/导演/作者)
   creator_label = "Artist" # 创作者的称谓，用于显示 (例如 Artist, Developer)
-  release_date = "2024-09-01" # 作品发行/上映日期
+  release_date = "1993-09-01" # 作品发行/上映日期
 
   # --- 评论特定信息 ---
   score = 8.5 # 评分
@@ -17,6 +17,8 @@ date = 2024-09-11
   # recommendations = ["Best New Music"]
   [cover]
   image = "https://ptpimg.me/8ofn1f.jpg" # 封面图片路径
+  aspect = "1:1"
+
 +++
 
 评论

@@ -17,4 +17,5 @@ recommended = true
 # summary = "The London-based musician’s potent and intuitive second album dissolves the binaries inherent in ambient jazz and imagines a third sort of music that thrives at their midpoint." # 摘要
 [cover]
 image = "https://ptpimg.me/v6ctgi.jpg" # 封面图片路径
+aspect = "1:1"
 +++
