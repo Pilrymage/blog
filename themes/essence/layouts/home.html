@@ -1,0 +1,64 @@
+{{ define "main" }}
+  <section class="intro-block">
+    {{ with .Site.Params.homeInfoParams.Title }}
+      <h2>{{ . }}</h2>
+    {{ end }}
+    {{ with .Site.Params.homeInfoParams.Content }}
+      <div class="intro-copy">{{ . | markdownify }}</div>
+    {{ else }}
+      <p>{{ .Site.Params.description }}</p>
+    {{ end }}
+  </section>
+  <section class="post-list">
+    <h2 class="section-title">最新文章</h2>
+    {{ $homeSections := slice "posts" "reviews" }}
+    {{ $entries := where .Site.RegularPages "Section" "in" $homeSections }}
+    {{ if not (gt (len $entries) 0) }}
+      <p class="empty-copy">暂无文章，稍后再来看看。</p>
+    {{ else }}
+      {{ $badgeMap := dict
+        "posts" (dict "label" "想法" "class" "badge-idea")
+        "reviews" (dict "label" "评论" "class" "badge-review")
+      }}
+      {{ range ($entries.GroupByDate "2006") }}
+        <h3 class="year-heading">{{ .Key }}</h3>
+        <div class="post-list__items">
+          {{ range .Pages.ByDate.Reverse }}
+            {{ $section := .Section }}
+            {{ $badgeMeta := index $badgeMap $section }}
+            {{ $badgeClass := default "badge-default" (and $badgeMeta (index $badgeMeta "class")) }}
+            {{ $badgeLabel := default (title $section) (and $badgeMeta (index $badgeMeta "label")) }}
+            <article class="home-entry">
+              <span class="home-entry__badge {{ $badgeClass }}">{{ $badgeLabel }}</span>
+              <h3 class="home-entry__title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h3>
+              <p class="home-entry__excerpt">
+                {{ with .Params.description }}
+                  {{ . }}
+                {{ else }}
+                  {{ (.Summary | plainify) | truncate 128 }}
+                {{ end }}
+              </p>
+              <div class="home-entry__meta">
+                <span class="home-entry__meta-item">
+                  <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                </span>
+                <span class="home-entry__meta-item">
+                  {{ printf "%d 字" .WordCount }}
+                </span>
+                {{ with .Params.tags }}
+                  <span class="home-entry__meta-item home-entry__tags">
+                    {{ range . }}
+                      <span>{{ . }}</span>
+                    {{ end }}
+                  </span>
+                {{ end }}
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

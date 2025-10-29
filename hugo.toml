@@ -1,9 +1,10 @@
 baseURL = 'https://pilrymage.github.io/'
 languageCode = 'en-us'
 title = 'pilrymage'
-[module]
-  [[module.imports]]
-    path = "github.com/adityatelange/hugo-PaperMod"
+theme = 'essence'
+# [module]
+#   [[module.imports]]
+#     path = "github.com/adityatelange/hugo-PaperMod"
 [markup.highlight]
   codeFences = true
 [markup.goldmark.renderer]
@@ -34,8 +35,33 @@ title = 'pilrymage'
 [params]
   math = true
 
+   [params.features]
+    search = true
+    analytics = false
+    seo = true
+
+  [params.search]
+    indexURL = "index.json"
+    minLength = 2
+    debounce = 180
+    maxResults = 30
+
+  [params.analytics]
+    provider = "gtag"
+    propertyID = "G-DRXDN3RP5C"
+    domain = "pilrymage.github.io/blog"
+    scriptURL = ""
+    websiteID = ""
+
+  [params.seo]
+    defaultDescription = ""
+    defaultImage = ""
+    enableOpenGraph = true
+    enableTwitter = true
+    enableJSONLD = true
+
   [params.homeInfoParams]
-    Title = "Paper Moon"
+    Title = "網絡の自留地"
     Content = "😇 Have a nice life..."
 
   [[params.socialIcons]]
