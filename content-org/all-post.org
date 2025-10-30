@@ -48,7 +48,7 @@ Other techs I've learned:
 
 ** Battlestation Now
 - *Dell G15* with RTX 3060 Laptop, *Windows 10 IoT LTSC*.
-  Connected with 27'' *4K monitor*, KEMOVE K61 *mechanical keyboard*,
+  Connected with 27-inch *4K monitor*, KEMOVE K61 *mechanical keyboard*,
   and *XBox Controller* for gaming.
 
   Still a desktop is preferred, so that my 16TB HDD can directly put in.

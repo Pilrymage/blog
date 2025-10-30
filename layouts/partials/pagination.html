@@ -1,0 +1,48 @@
+{{- $paginator := .Paginator -}}
+{{- if and $paginator (gt $paginator.TotalPages 1) -}}
+  <nav class="pager" role="navigation" aria-label="分页导航">
+    <ul class="pager__list">
+      {{- with $paginator.Prev -}}
+        <li class="pager__item">
+          <a class="pager__link pager__link--prev" rel="prev" href="{{ .URL }}">
+            <span aria-hidden="true">←</span>
+            <span class="pager__label">上一页</span>
+          </a>
+        </li>
+      {{- else -}}
+        <li class="pager__item">
+          <span class="pager__link pager__link--prev is-disabled" aria-disabled="true">
+            <span aria-hidden="true">←</span>
+            <span class="pager__label">上一页</span>
+          </span>
+        </li>
+      {{- end -}}
+
+      {{- range $paginator.Pagers -}}
+        <li class="pager__item">
+          {{- if eq . $paginator -}}
+            <span class="pager__link is-active" aria-current="page">{{ .PageNumber }}</span>
+          {{- else -}}
+            <a class="pager__link" href="{{ .URL }}">{{ .PageNumber }}</a>
+          {{- end -}}
+        </li>
+      {{- end -}}
+
+      {{- with $paginator.Next -}}
+        <li class="pager__item">
+          <a class="pager__link pager__link--next" rel="next" href="{{ .URL }}">
+            <span class="pager__label">下一页</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </li>
+      {{- else -}}
+        <li class="pager__item">
+          <span class="pager__link pager__link--next is-disabled" aria-disabled="true">
+            <span class="pager__label">下一页</span>
+            <span aria-hidden="true">→</span>
+          </span>
+        </li>
+      {{- end -}}
+    </ul>
+  </nav>
+{{- end -}}

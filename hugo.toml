@@ -2,6 +2,7 @@ baseURL = 'https://pilrymage.github.io/'
 languageCode = 'en-us'
 title = 'pilrymage'
 theme = 'essence'
+hasCJKLanguage = true
 # [module]
 #   [[module.imports]]
 #     path = "github.com/adityatelange/hugo-PaperMod"
@@ -31,14 +32,16 @@ theme = 'essence'
   name = "Search"
   url = "search"
 
-
+ 
 [params]
   math = true
 
-   [params.features]
+  [params.features]
     search = true
     analytics = false
     seo = true
+    syntaxHighlight = true
+    copyCode = true
 
   [params.search]
     indexURL = "index.json"

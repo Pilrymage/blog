@@ -33,6 +33,7 @@
   {{ $duration := .Params.duration }}
   {{ $region := .Params.region }}
   {{ $language := .Params.language }}
+  {{ $wordLabel := partial "wordcount.html" . }}
 
   <article class="content-article review-article">
     <header class="review-hero">
@@ -50,16 +51,29 @@
         {{ end }}
       </div>
       <div class="review-hero__details">
+        {{ $metaScratch := newScratch }}
+        {{ $metaScratch.Set "count" 0 }}
         <div class="review-hero__meta">
           {{ with $mediaType }}
             <span class="review-hero__meta-item">{{ . | humanize }}</span>
+            {{ $metaScratch.Add "count" 1 }}
           {{ end }}
           {{ with $release }}
+            {{ if gt ($metaScratch.Get "count") 0 }}
+              <span class="review-hero__separator">·</span>
+            {{ end }}
+            <span class="review-hero__meta-item">{{ . }}</span>
+            {{ $metaScratch.Add "count" 1 }}
+          {{ end }}
+          {{ if gt ($metaScratch.Get "count") 0 }}
+            <span class="review-hero__separator">·</span>
+          {{ end }}
+          <time class="review-hero__meta-item" datetime="{{ .Date | time.Format "2006-01-02" }}">評述於 {{ .Date.Format "2006-01-02" }}</time>
+          {{ $metaScratch.Add "count" 1 }}
+          {{ with $wordLabel }}
             <span class="review-hero__separator">·</span>
             <span class="review-hero__meta-item">{{ . }}</span>
           {{ end }}
-          <span class="review-hero__separator">·</span>
-          <time class="review-hero__meta-item" datetime="{{ .Date | time.Format "2006-01-02" }}">評述於 {{ .Date.Format "2006-01-02" }}</time>
         </div>
         <h1 class="review-hero__title">{{ .Title }}</h1>
         {{ if or $creator $creatorLabel }}

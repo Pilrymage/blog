@@ -62,7 +62,7 @@
         "error" "索引加载失败，请稍后再试。"
       )
     }}
-    <script id="essence-search-config" type="application/json">{{ $config | jsonify }}</script>
+    <script id="essence-search-config" type="application/json">{{ $config | jsonify | safeJS }}</script>
     {{ with resources.Get "js/search.js" }}
       {{ $opts := dict
         "targetPath" "js/search.js"

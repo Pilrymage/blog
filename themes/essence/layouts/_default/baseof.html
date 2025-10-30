@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ or .Site.LanguageCode "en" }}">
+{{- $features := .Site.Params.features | default dict -}}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,15 +9,19 @@
     <meta name="description" content="{{ . }}">
   {{- end }}
   {{ hugo.Generator }}
-  {{ with .Site.Params.features }}
-    {{ if .seo }}
-      {{ partial "seo/meta.html" $ }}
-    {{ end }}
+  {{ if (default false $features.seo) }}
+    {{ partial "seo/meta.html" $ }}
+  {{ end }}
+  {{ if or .Params.math .Site.Params.math }}
+    {{ partial "math.html" . }}
+  {{ end }}
+  {{ if (default true $features.syntaxHighlight) }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark-dimmed.min.css">
   {{ end }}
   {{ partial "head/css.html" . }}
   {{ block "extra_head" . }}{{ end }}
 </head>
-<body class="{{ if .IsHome }}is-home{{ end }}">
+<body class="{{ if .IsHome }}is-home{{ end }}" data-feature-copy="{{ cond (default true $features.copyCode) "true" "false" }}" data-feature-highlight="{{ cond (default true $features.syntaxHighlight) "true" "false" }}">
   <div class="page-shell">
     {{ partial "header.html" . }}
     <main id="main-content" class="site-main" role="main">
@@ -24,12 +29,13 @@
     </main>
     {{ partial "footer.html" . }}
   </div>
+  {{ if (default true $features.syntaxHighlight) }}
+    <script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+  {{ end }}
   {{ partial "head/js.html" . }}
   {{ block "extra_js" . }}{{ end }}
-  {{ with .Site.Params.features }}
-    {{ if .analytics }}
-      {{ partial "analytics.html" $ }}
-    {{ end }}
+  {{ if (default false $features.analytics) }}
+    {{ partial "analytics.html" $ }}
   {{ end }}
 </body>
 </html>
