@@ -1,8 +1,7 @@
 +++
 title = "Windows 资源汇总"
 date = 2025-08-19T21:45:00+08:00
-tags = ["fwt"]
-categories = ["g"]
+tags = ["windows"]
 draft = false
 +++
 

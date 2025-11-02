@@ -1,7 +1,7 @@
 baseURL = 'https://pilrymage.github.io/'
 languageCode = 'en-us'
 title = 'pilrymage'
-theme = 'essence'
+theme = 'sublime'
 hasCJKLanguage = true
 # [module]
 #   [[module.imports]]

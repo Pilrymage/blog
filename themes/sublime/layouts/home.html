@@ -1,8 +1,9 @@
 {{ define "main" }}
   <section class="intro-block">
-    {{ with .Site.Params.homeInfoParams.Title }}
+    {{ partial "artform" }}
+    <!-- {{ with .Site.Params.homeInfoParams.Title }}
       <h2>{{ . }}</h2>
-    {{ end }}
+    {{ end }} -->
     {{ with .Site.Params.homeInfoParams.Content }}
       <div class="intro-copy">{{ . | markdownify }}</div>
     {{ else }}
