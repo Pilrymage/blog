@@ -73,11 +73,8 @@ CLOSED: [2025-10-29 Wed 21:00]
 :EXPORT_FILE_NAME: _index
 :END:
 
-* TODO template                                                     
-:PROPERTIES:
-:EXPORT_FILE_NAME: template
-:END:
-* DONE All Reviews
+* TODO template
+* DONE “九大艺术”
 CLOSED: [2025-08-24 Sun 17:25]
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /reviews
@@ -232,7 +229,7 @@ Linux 比 Windows 好就好在有一个包管理器，
 - *尾注* ， *页眉页脚* ， *表格* 都是写作论文的细节
 - *查找与替换* ，大家都很熟悉正则表达式吧，Word 也有这种东西
 - *邮件合并* 虽然听上去很没用，但也是计算机二级的考点，还有一些妙用
-* TODO Emacs，Hugo，Codex：2025年搭建个人博客的三位一体        :emacs:hugo:ai:
+* TODO Emacs, Hugo, Codex：2025年搭建个人博客的三位一体        :emacs:hugo:ai:
 :PROPERTIES:
 :EXPORT_FILE_NAME: blog-the-fastman-way
 :END:
@@ -255,8 +252,33 @@ Linux 比 Windows 好就好在有一个包管理器，
    了解博客工具如何通过命令行运作。
 
 ** 基础：Markdown，命令行，git，以及 VSCode
+*** Markdown：最流行的纯文本格式
+*** Windows 命令行解说
+#+begin_quote
+Linux 用户注释：这一段的“命令行”不止于 cmd.exe，相当于 shell 的中文名，两者可以通用。
+实际上解释的是如何切换到 powershell 并准备好包管理器 scoop，从而下载 Hugo。
+#+end_quote
+1. 打开 powershell：在这一步后你应该看到
+   : Windows PowerShell
+   : Copyright (C) Microsoft Corporation. All rights reserved.
+   : 
+   : Try the new cross-platform PowerShell https://aka.ms/pscore6
+   :
+   : PS C:\Users\pilrymage>
+   搜索框或 Win+R 键调出。
+2. 下载 scoop。如[[https://scoop.sh/][官网]]所说
+   #+begin_src powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+   #+end_src
 ** Emacs-Orgmode：纯文本输出
 
 ** Hugo：最快的静态网页生成器
 ** GPT Codex：个人主题定制
 ** GitHub：部署托管个人网页
+* TODO Google Calendar + Thunderbird：大學生課表與工作安排入門
+:PROPERTIES:
+:EXPORT_FILE_NAME: calendar-tutorial
+:END:
+
+* TODO 信息熵的藝術：個人 RSS 閱讀工具基礎建設
