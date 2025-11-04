@@ -42,6 +42,7 @@ hasCJKLanguage = true
     seo = true
     syntaxHighlight = true
     copyCode = true
+    langToggle = true
 
   [params.search]
     indexURL = "index.json"

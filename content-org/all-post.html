@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-10-31 Fri 12:59 -->
+<!-- 2025-11-04 Tue 13:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -192,6 +192,38 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -199,21 +231,410 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3ada31c">1. <span class="todo TODO">TODO</span> Emacs，Hugo，Codex：2025年搭建个人博客的三位一体&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="hugo">hugo</span>&#xa0;<span class="ai">ai</span></span></a>
+<li><a href="#org201ae2a">1. <span class="done DONE">DONE</span> About</a>
 <ul>
-<li><a href="#org625e471">1.1. 基础：Markdown，命令行，git，以及 VSCode</a></li>
-<li><a href="#orgd8b795f">1.2. Emacs-Orgmode：纯文本输出</a></li>
-<li><a href="#org90e2796">1.3. Hugo：最快的静态网页生成器</a></li>
-<li><a href="#org4c5f83d">1.4. GPT Codex：个人主题定制</a></li>
-<li><a href="#org572b160">1.5. GitHub：部署托管个人网页</a></li>
+<li><a href="#orgbd31e7f">1.1. Professional Skill</a></li>
+<li><a href="#org44e288b">1.2. Hobbyist</a></li>
+<li><a href="#orgb9d7bdc">1.3. Battlestation Now</a></li>
 </ul>
 </li>
+<li><a href="#org2c8d1d9">2. <span class="done DONE">DONE</span> Search</a></li>
+<li><a href="#org85a8df4">3. <span class="done DONE">DONE</span> 文章归档</a></li>
+<li><a href="#org9cfd449">4. <span class="todo TODO">TODO</span> template</a></li>
+<li><a href="#orgff9a984">5. <span class="done DONE">DONE</span> “九大艺术”</a></li>
+<li><a href="#org8e9f095">6. <span class="done DONE">DONE</span> 男性秃头，发质细软塌的对策&#xa0;&#xa0;&#xa0;<span class="tag"><span class="med">med</span></span></a>
+<ul>
+<li><a href="#orgc9b0ef6">6.1. 引子</a></li>
+<li><a href="#org9aea5a6">6.2. 非那雄胺·度他雄胺</a></li>
+<li><a href="#org894d231">6.3. 米那地尔</a></li>
+<li><a href="#orga9e938e">6.4. 酮康唑</a></li>
+<li><a href="#orgb77e9c4">6.5. 雌激素</a></li>
+</ul>
+</li>
+<li><a href="#orga869c69">7. <span class="done DONE">DONE</span> Windows 资源汇总&#xa0;&#xa0;&#xa0;<span class="tag"><span class="windows">windows</span></span></a>
+<ul>
+<li><a href="#orgb8faa84">7.1. Windows / Office 激活</a></li>
+<li><a href="#org1198fbd">7.2. 下载 Windows/Office</a></li>
+<li><a href="#org24eda03">7.3. Windows 软件管理 in 2025</a></li>
+<li><a href="#orgde15077">7.4. Windows 软件推荐</a></li>
+<li><a href="#orgd1f22f2">7.5. Office 教程</a></li>
+</ul>
+</li>
+<li><a href="#orgad98e36">8. <span class="todo TODO">TODO</span> Emacs, Hugo, Codex：2025年搭建个人博客的三位一体&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="hugo">hugo</span>&#xa0;<span class="ai">ai</span></span></a>
+<ul>
+<li><a href="#org9cb919f">8.1. 基础：Markdown，命令行，git，以及 VSCode</a>
+<ul>
+<li><a href="#org73ef2c9">8.1.1. Markdown：最流行的纯文本格式</a></li>
+<li><a href="#orga136c62">8.1.2. Windows 命令行解说</a></li>
+</ul>
+</li>
+<li><a href="#org11b640b">8.2. Emacs-Orgmode：纯文本输出</a></li>
+<li><a href="#org8db11b5">8.3. Hugo：最快的静态网页生成器</a></li>
+<li><a href="#orgef51611">8.4. GPT Codex：个人主题定制</a></li>
+<li><a href="#org530cb72">8.5. GitHub：部署托管个人网页</a></li>
+</ul>
+</li>
+<li><a href="#org067f652">9. <span class="todo TODO">TODO</span> Google Calendar + Thunderbird：大學生課表與工作安排入門</a></li>
+<li><a href="#org014b321">10. <span class="todo TODO">TODO</span> 信息熵的藝術：個人 RSS 閱讀工具基礎建設</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3ada31c" class="outline-2">
-<h2 id="org3ada31c"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Emacs，Hugo，Codex：2025年搭建个人博客的三位一体&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="hugo">hugo</span>&#xa0;<span class="ai">ai</span></span></h2>
+<div id="outline-container-org201ae2a" class="outline-2">
+<h2 id="org201ae2a"><span class="section-number-2">1.</span> <span class="done DONE">DONE</span> About</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+4chan user, old school player, child educator and a man doing hacker.
+Studying Master program in Cyberspace Security from <a href="https://en.wikipedia.org/wiki/Jinan_University">Jinan University</a>.
+Proud of my jack of all trades, surely master of none but still proud.
+</p>
+</div>
+<div id="outline-container-orgbd31e7f" class="outline-3">
+<h3 id="orgbd31e7f"><span class="section-number-3">1.1.</span> Professional Skill</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><i>Maybe make things with AI</i> category
+<ul class="org-ul">
+<li>Programming: Python, javascript</li>
+<li>Software: Emacs, Latex</li>
+</ul></li>
+<li><i>"Skill issue"</i> category
+<ul class="org-ul">
+<li>Programming: C, C++, bash, Lisp</li>
+<li>Software: Docker, Git</li>
+</ul></li>
+<li><i>Learn X in Y minutes</i> category
+<ul class="org-ul">
+<li>Programming: Java, Go, Rust</li>
+<li>Framework: React</li>
+</ul></li>
+</ul>
+
+<p>
+Other techs I've learned:
+</p>
+<ul class="org-ul">
+<li>GNU/Linux Distro, install and usage.
+<b>InstallGentoo</b> for 3 times and do LFS walkthrough one time.
+Also has experience with FreeBSD and Hackintosh, etc.
+Obsessed with notebook <i>All in One</i> in my college life.</li>
+<li>Vim and Emacs, the God of Editor and the Editor of God.
+I use them for writing org mode, also this blog.</li>
+<li>PL Theory and Proof Assistant. AKA Lean4.</li>
+<li>Music Production.</li>
+<li>Private Tracker.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org44e288b" class="outline-3">
+<h3 id="org44e288b"><span class="section-number-3">1.2.</span> Hobbyist</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Language
+<ul class="org-ul">
+<li><b>Mandarin</b> (Native Speaker); 
+Output Simplified Chinese, Can read Traditional Chinese fluently;
+<b>Cantonese</b> (Just for fun).</li>
+<li><b>English</b> (B2+ by passing <a href="https://en.wikipedia.org/wiki/College_English_Test">CET-6</a> with 570 point), also watch English TV operas.</li>
+<li><b>Japanese</b> (<del>B2 by passing <a href="https://en.wikipedia.org/wiki/Japanese-Language_Proficiency_Test">JLPT N1</a></del> B1 by N1 89 points which still failed :-( )</li>
+<li>Learning French, Korean and Russian, still at alphabet. Seriously it takes time and effort.</li>
+</ul></li>
+<li>Another major course
+<ul class="org-ul">
+<li><b>Medical</b>: anatomy</li>
+<li><b>Law</b>: legal theory</li>
+</ul></li>
+</ul>
+
+<ul class="org-ul">
+<li>Entertainment</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb9d7bdc" class="outline-3">
+<h3 id="orgb9d7bdc"><span class="section-number-3">1.3.</span> Battlestation Now</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><p>
+<b>Dell G15</b> with RTX 3060 Laptop, <b>Windows 10 IoT LTSC</b>.
+Connected with 27-inch <b>4K monitor</b>, KEMOVE K61 <b>mechanical keyboard</b>,
+and <b>XBox Controller</b> for gaming.
+</p>
+
+<p>
+Still a desktop is preferred, so that my 16TB HDD can directly put in.
+(2025.8.20)
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2c8d1d9" class="outline-2">
+<h2 id="org2c8d1d9"><span class="section-number-2">2.</span> <span class="done DONE">DONE</span> Search</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-toml"><code><span style="color: #718CA1;">layout</span> = <span style="color: #539AFC;">"search"</span>
+<span style="color: #718CA1;">summary</span> = <span style="color: #539AFC;">"search"</span>
+<span style="color: #718CA1;">placeholder</span> = <span style="color: #539AFC;">"&#36827;&#34892;&#25628;&#32034;&#8230;&#8230;"</span>
+</code></pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org85a8df4" class="outline-2">
+<h2 id="org85a8df4"><span class="section-number-2">3.</span> <span class="done DONE">DONE</span> 文章归档</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</div>
+<div id="outline-container-org9cfd449" class="outline-2">
+<h2 id="org9cfd449"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> template</h2>
+</div>
+<div id="outline-container-orgff9a984" class="outline-2">
+<h2 id="orgff9a984"><span class="section-number-2">5.</span> <span class="done DONE">DONE</span> “九大艺术”</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+</div>
+<div id="outline-container-org8e9f095" class="outline-2">
+<h2 id="org8e9f095"><span class="section-number-2">6.</span> <span class="done DONE">DONE</span> 男性秃头，发质细软塌的对策&#xa0;&#xa0;&#xa0;<span class="tag"><span class="med">med</span></span></h2>
+<div class="outline-text-2" id="text-6">
+<blockquote>
+<p>
+理性讨论，文章内容不代表本人（
+</p>
+</blockquote>
+</div>
+<div id="outline-container-orgc9b0ef6" class="outline-3">
+<h3 id="orgc9b0ef6"><span class="section-number-3">6.1.</span> 引子</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+男生发型不好，可以剪可以染烫，但是头发没了就真的没办法了。不重视发型是大多国男的缺憾之一。
+如果头发打湿后肉眼可见头皮，则头发肯定是太过细软了，是脱发的前兆。
+细软发质本就显得头发稀少，根本留不了发型，脱发后更是对二十岁的人打击甚大。
+</p>
+
+<p>
+发质细软乃至秃顶，细软可能是发质天生如此，
+也可能是头发毛囊逐渐退化而闭合，生发的能力越来越弱。
+毛囊闭合是不可逆的，这种情况只好植发。
+而更多人正是在出现脱发时才注意到要保护头发，可惜为时已晚。
+</p>
+
+<p>
+目前证明有效的制止脱发，主要靠三样：
+</p>
+<ul class="org-ul">
+<li>药片：非那雄胺(Finasteride)，或是度他雄胺(Dutasteride)</li>
+<li>洗剂：米那地尔</li>
+<li>洗发水：酮康唑</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9aea5a6" class="outline-3">
+<h3 id="org9aea5a6"><span class="section-number-3">6.2.</span> 非那雄胺·度他雄胺</h3>
+<div class="outline-text-3" id="text-6-2">
+<blockquote>
+<p>
+雄激素性脱发[1]（androgenetic alopecia，AGA）[2]俗称早秃[3]，旧时误称脂溢性脱发，
+是前额上部或头顶部头发逐渐稀少，最后头皮光滑或有少许细毛，有时合并皮脂溢出，多见于男性。 
+</p>
+</blockquote>
+
+<p>
+非那雄胺的原理是，压制双氢睾酮（DHT）的生成，减少其对毛囊的作用。
+男性更易脱发，关键在于睾酮部分地(10%)转化为DHT，
+而DHT主要起到第二性征发育的作用，过了青春期后只能产生让人毛囊收缩消失的后果。
+非那雄胺是一种 5-alpha 还原酶(5ar)抑制剂，通过阻止 5-alpha 还原酶将睾酮转化为DHT实现减缓雄脱。
+由此，非那雄胺更多是阻止继续掉发，或许能稍微恢复一点头发，也有些人的生发效果很好。
+</p>
+
+<p>
+5ar 抑制剂对剂量不敏感，0.2mg 用量可以减少 68% 的DHT， 5mg 用量可以减少 72% 的DHT。
+度他雄胺的效果更强，0.5mg 用量可以减少 95% 的 DHT，但是会更贵一些。
+度他雄胺的半衰期为8小时，每天吃一片，疗程三个月。
+</p>
+
+<p>
+非那雄胺长期用于治疗前列腺增生，对人的副作用与效果已经被研究得很明白了，
+我的外公也吃非那雄胺，他是治前列腺不行，老人漏尿的。
+但有1-2%的可能性会导致ED。说实话对于
+可以通过减少摄入药物等来避免。保法止1mg 足以起到防脱发作用。
+</p>
+</div>
+</div>
+<div id="outline-container-org894d231" class="outline-3">
+<h3 id="org894d231"><span class="section-number-3">6.3.</span> 米那地尔</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+米那地尔(Minoxidil)通过打开钾离子通道，扩张头顶毛囊血管从而刺激毛发生长期。
+米那地尔配合非那雄胺来恢复头发，在脱发早期（NW2期之前）最有效果。
+</p>
+</div>
+</div>
+<div id="outline-container-orga9e938e" class="outline-3">
+<h3 id="orga9e938e"><span class="section-number-3">6.4.</span> 酮康唑</h3>
+</div>
+
+<div id="outline-container-orgb77e9c4" class="outline-3">
+<h3 id="orgb77e9c4"><span class="section-number-3">6.5.</span> 雌激素</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+抗雄激素：螺内酯(spirolactone) 通过抑止睾酮，从而抑止DHT。
+雌激素：戊酸雌二醇，用于补充雌激素，防止性激素紊乱。
+</p>
+
+<p>
+注意这些药用于男性转女性的激素替代疗法，比5ar抑制剂更加容易导致性功能问题。
+但是，的确有人为了有女性一样的发质而吃抗雄激素与雌激素。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga869c69" class="outline-2">
+<h2 id="orga869c69"><span class="section-number-2">7.</span> <span class="done DONE">DONE</span> Windows 资源汇总&#xa0;&#xa0;&#xa0;<span class="tag"><span class="windows">windows</span></span></h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-orgb8faa84" class="outline-3">
+<h3 id="orgb8faa84"><span class="section-number-3">7.1.</span> Windows / Office 激活</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+打开 Windows Powershell 然后执行：
+</p>
+<pre class="example">
+irm https://get.activated.win | iex
+</pre>
+<p>
+使用 HWID 激活 Windows，使用 Ohook 激活 Office。
+</p>
+</div>
+</div>
+<div id="outline-container-org1198fbd" class="outline-3">
+<h3 id="org1198fbd"><span class="section-number-3">7.2.</span> 下载 Windows/Office</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+<b>Win10 Enterprise IoT LTSC 2021</b> is all you need.
+</p>
+<ul class="org-ul">
+<li>🉑安全更新到2032年，让微软多修几年Win11。<br />
+对比：企业LTSC版支持到2027年，企业物联网LTSC版又多五年支持</li>
+<li>没有多余应用，等同于精简版；<br />
+预安装Edge浏览器和Win32系统应用。</li>
+<li>与LTSC在二进制水平上完全相同，除了没有 MS Store。<br />
+下载MS Store： <code>wsreset -i</code> 。
+或者，安装 <code>winget</code> 和 <code>scoop</code> 管理一切。</li>
+<li>可手动安装安全更新</li>
+</ul>
+
+<p>
+<b>Win11 Enterprise IoT LTSC 2024</b>
+</p>
+<ul class="org-ul">
+<li>与 Win10 IoT LTSC 很像</li>
+<li>使用 React Native 重写 UI (???)</li>
+<li>这个 <b>Intel 12 代以上的大小核调度</b> 是不是非要不可，然后可以考虑这一版</li>
+<li>否则就等着 IoT LTSC 2027 吧</li>
+</ul>
+
+
+<p>
+其他Win10/Win11 家庭版/专业版/教育版/企业版/企业版IoT
+</p>
+<ul class="org-ul">
+<li>预安装Edge, Win32系统应用，MS Store，OneDrive, 天气，电影，音乐，Candy Crush，等等</li>
+<li>特性更新时自动更新应用</li>
+<li>仅1.5~3年支持</li>
+<li>强制更新</li>
+</ul>
+
+
+<p>
+Office 版本
+</p>
+<pre class="example" id="org54907e9">
+Microsoft 365 优于 Office 2024，因为它包含只有 365 才提供的以下功能。
+- PowerPoint 中的设计器
+- Word 中的 Microsoft 编辑器
+- Excel 中的最新公式
+- 高级字体和图标
+- 辅助功能增强
+Microsoft 365 会定期接收更新，所有应用程序都会获得新功能和改进。相比之下，Office 2024 仅接收安全更新，没有新增功能。
+  -- Massgrave
+</pre>
+
+<p>
+下载地址：<a href="https://massgrave.dev/genuine-installation-media">Download Windows / Office | MAS</a> 
+</p>
+</div>
+</div>
+<div id="outline-container-org24eda03" class="outline-3">
+<h3 id="org24eda03"><span class="section-number-3">7.3.</span> Windows 软件管理 in 2025</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+从 WinXP 时野蛮生长的软件安装，
+目前已经产生了安装速度、安全来源与可复现构建等多方面的困扰。
+Linux 比 Windows 好就好在有一个包管理器，
+而坑也就坑在不同发行版都有自己的包管理器。
+好在现在 Windows 的可用包管理器与 Win10 和 Powershell 结合得很好，
+</p>
+
+<ul class="org-ul">
+<li><a href="https://chocolatey.org/">Chocolatey</a> 是Windows 的经典软件包管理器。您可以在其中找到所有需要的东西。</li>
+<li><a href="https://scoop.sh/">Scoop</a> 包含不知名但有用的实用程序和其它有趣软件包的重要存储库。</li>
+<li><a href="https://github.com/microsoft/winget-cli">Winget</a> 是微软的官方软件包管理器。拥有知名的、经过验证的众多软件包。</li>
+</ul>
+
+<p>
+<a href="https://github.com/marticliment/UniGetUI">UniGetUI</a>则是包管理器的 UI 界面，个人感觉等于把包管理器大一统了……
+</p>
+
+
+<div id="orgaada8f3" class="figure">
+<p><img src="img/2025-05-08_17-02-45_screenshot.png" alt="2025-05-08_17-02-45_screenshot.png" />
+</p>
+</div>
+
+<p>
+建议 UniGetUI 多用吧。
+</p>
+</div>
+</div>
+<div id="outline-container-orgde15077" class="outline-3">
+<h3 id="orgde15077"><span class="section-number-3">7.4.</span> Windows 软件推荐</h3>
+</div>
+<div id="outline-container-orgd1f22f2" class="outline-3">
+<h3 id="orgd1f22f2"><span class="section-number-3">7.5.</span> Office 教程</h3>
+<div class="outline-text-3" id="text-7-5">
+<p>
+很多 Office 的知识点是面向计算机二级的；
+非科班的玩不来电脑，计算机科班的又不考计算机二级。
+但是计算级二级水平的 Office 知识对计算机科班而言同样必要，
+这样至少不会因为玩不来 Word 排版而选择梭哈 \(\LaTeX\) ，
+反过来歧视 Word 怎样地劳心费力，不如 \(\LaTeX\) 一根。
+</p>
+
+<p>
+推荐（付费视频）教程：<a href="https://space.bilibili.com/18211708/pugv?defaultTab=cheese">向天歌的PPT/Excel/Word大神上分攻略</a>。<br />
+配套电子书教材：PPT之光/Excel之光/Word之光。
+</p>
+<pre class="example">
+我曾拜读过 Oeasy 老师的教程，现在就感觉这玩意还是太老了且缺乏体系，
+拿出来个系统是 Windows Vista，Office 2007。
+虽然我也曾认为 Office 2003 是 Golden Standard，
+可能只是因为与 WinXP 和华军软件园更搭配。
+</pre>
+
+<p>
+举例如 Word 教程的一些我认为有必要学习的知识点：
+</p>
+<ul class="org-ul">
+<li><b>样式</b> 作为结构化排版的基础</li>
+<li><b>尾注</b> ， <b>页眉页脚</b> ， <b>表格</b> 都是写作论文的细节</li>
+<li><b>查找与替换</b> ，大家都很熟悉正则表达式吧，Word 也有这种东西</li>
+<li><b>邮件合并</b> 虽然听上去很没用，但也是计算机二级的考点，还有一些妙用</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgad98e36" class="outline-2">
+<h2 id="orgad98e36"><span class="section-number-2">8.</span> <span class="todo TODO">TODO</span> Emacs, Hugo, Codex：2025年搭建个人博客的三位一体&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="hugo">hugo</span>&#xa0;<span class="ai">ai</span></span></h2>
+<div class="outline-text-2" id="text-8">
 <blockquote>
 <p>
 我看 Emacs-Hugo + Codex 搞得不错，静态网页生态极大丰富，迁移困难基本消灭，网站风格、程序员审美也受重视，
@@ -246,26 +667,74 @@
 </p></li>
 </ol>
 </div>
-<div id="outline-container-org625e471" class="outline-3">
-<h3 id="org625e471"><span class="section-number-3">1.1.</span> 基础：Markdown，命令行，git，以及 VSCode</h3>
+<div id="outline-container-org9cb919f" class="outline-3">
+<h3 id="org9cb919f"><span class="section-number-3">8.1.</span> 基础：Markdown，命令行，git，以及 VSCode</h3>
+<div class="outline-text-3" id="text-8-1">
 </div>
-<div id="outline-container-orgd8b795f" class="outline-3">
-<h3 id="orgd8b795f"><span class="section-number-3">1.2.</span> Emacs-Orgmode：纯文本输出</h3>
+<div id="outline-container-org73ef2c9" class="outline-4">
+<h4 id="org73ef2c9"><span class="section-number-4">8.1.1.</span> Markdown：最流行的纯文本格式</h4>
+</div>
+<div id="outline-container-orga136c62" class="outline-4">
+<h4 id="orga136c62"><span class="section-number-4">8.1.2.</span> Windows 命令行解说</h4>
+<div class="outline-text-4" id="text-8-1-2">
+<blockquote>
+<p>
+Linux 用户注释：这一段的“命令行”不止于 cmd.exe，相当于 shell 的中文名，两者可以通用。
+实际上解释的是如何切换到 powershell 并准备好包管理器 scoop，从而下载 Hugo。
+</p>
+</blockquote>
+<ol class="org-ol">
+<li><p>
+打开 powershell：在这一步后你应该看到
+</p>
+<pre class="example">
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\pilrymage&gt;
+</pre>
+<p>
+搜索框或 Win+R 键调出。
+</p></li>
+<li><p>
+下载 scoop。如<a href="https://scoop.sh/">官网</a>所说
+</p>
+<div class="org-src-container">
+<pre class="src src-powershell"><code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+</code></pre>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org11b640b" class="outline-3">
+<h3 id="org11b640b"><span class="section-number-3">8.2.</span> Emacs-Orgmode：纯文本输出</h3>
 </div>
 
-<div id="outline-container-org90e2796" class="outline-3">
-<h3 id="org90e2796"><span class="section-number-3">1.3.</span> Hugo：最快的静态网页生成器</h3>
+<div id="outline-container-org8db11b5" class="outline-3">
+<h3 id="org8db11b5"><span class="section-number-3">8.3.</span> Hugo：最快的静态网页生成器</h3>
 </div>
-<div id="outline-container-org4c5f83d" class="outline-3">
-<h3 id="org4c5f83d"><span class="section-number-3">1.4.</span> GPT Codex：个人主题定制</h3>
+<div id="outline-container-orgef51611" class="outline-3">
+<h3 id="orgef51611"><span class="section-number-3">8.4.</span> GPT Codex：个人主题定制</h3>
 </div>
-<div id="outline-container-org572b160" class="outline-3">
-<h3 id="org572b160"><span class="section-number-3">1.5.</span> GitHub：部署托管个人网页</h3>
+<div id="outline-container-org530cb72" class="outline-3">
+<h3 id="org530cb72"><span class="section-number-3">8.5.</span> GitHub：部署托管个人网页</h3>
 </div>
+</div>
+<div id="outline-container-org067f652" class="outline-2">
+<h2 id="org067f652"><span class="section-number-2">9.</span> <span class="todo TODO">TODO</span> Google Calendar + Thunderbird：大學生課表與工作安排入門</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+</div>
+<div id="outline-container-org014b321" class="outline-2">
+<h2 id="org014b321"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> 信息熵的藝術：個人 RSS 閱讀工具基礎建設</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-10-31 Fri 12:59</p>
+<p class="date">Created: 2025-11-04 Tue 13:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

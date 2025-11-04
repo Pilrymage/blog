@@ -29,32 +29,71 @@
             {{ $badgeMeta := index $badgeMap $section }}
             {{ $badgeClass := default "badge-default" (and $badgeMeta (index $badgeMeta "class")) }}
             {{ $badgeLabel := default (title $section) (and $badgeMeta (index $badgeMeta "label")) }}
-            <article class="home-entry">
-              <span class="home-entry__badge {{ $badgeClass }}">{{ $badgeLabel }}</span>
-              <h3 class="home-entry__title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h3>
-              <p class="home-entry__excerpt">
-                {{ with .Params.description }}
-                  {{ . }}
-                {{ else }}
-                  {{ (.Summary | plainify) | truncate 128 }}
+            {{ $hero := "" }}
+            {{ with .Params.hero }}
+              {{ if (reflect.IsMap .) }}
+                {{ with or .image .src .url }}
+                  {{ $hero = . }}
                 {{ end }}
-              </p>
-              <div class="home-entry__meta">
-                <span class="home-entry__meta-item">
-                  <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-                </span>
-                <span class="home-entry__meta-item">
-                  {{ printf "%d 字" .WordCount }}
-                </span>
-                {{ with .Params.tags }}
-                  <span class="home-entry__meta-item home-entry__tags">
-                    {{ range . }}
-                      <span>{{ . }}</span>
-                    {{ end }}
+              {{ else }}
+                {{ $hero = . }}
+              {{ end }}
+            {{ end }}
+            {{ if and (eq $hero "") (.Params.heroImage) }}
+              {{ $hero = .Params.heroImage }}
+            {{ end }}
+            {{ if and (eq $hero "") (.Params.featured_image) }}
+              {{ $hero = .Params.featured_image }}
+            {{ end }}
+            {{ if and (eq $hero "") (.Params.image) }}
+              {{ $hero = .Params.image }}
+            {{ end }}
+            {{ $summary := "" }}
+            {{ with .Params.kicker }}
+              {{ $summary = . }}
+            {{ end }}
+            {{ if and (eq $summary "") (.Params.summary) }}
+              {{ $summary = .Params.summary }}
+            {{ end }}
+            {{ if and (eq $summary "") (.Params.description) }}
+              {{ $summary = .Params.description }}
+            {{ end }}
+            {{ if eq $summary "" }}
+              {{ $summary = (.Summary | plainify) | truncate 128 }}
+            {{ end }}
+            {{ $entryClass := "home-entry" }}
+            {{ if not $hero }}
+              {{ $entryClass = printf "%s %s" $entryClass "home-entry--no-hero" }}
+            {{ end }}
+            <article class="{{ $entryClass }}">
+              {{ if $hero }}
+                <a class="home-entry__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+                  <img src="{{ $hero }}" alt="" loading="lazy">
+                </a>
+              {{ end }}
+              <div class="home-entry__content">
+                <span class="home-entry__badge {{ $badgeClass }}">{{ $badgeLabel }}</span>
+                <h3 class="home-entry__title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                {{ with $summary }}
+                  <p class="home-entry__summary">{{ . }}</p>
+                {{ end }}
+                <div class="home-entry__meta">
+                  <span class="home-entry__meta-item">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
                   </span>
-                {{ end }}
+                  <span class="home-entry__meta-item">
+                    {{ printf "%d 字" .WordCount }}
+                  </span>
+                  {{ with .Params.tags }}
+                    <span class="home-entry__meta-item home-entry__tags">
+                      {{ range . }}
+                        <span>{{ . }}</span>
+                      {{ end }}
+                    </span>
+                  {{ end }}
+                </div>
               </div>
             </article>
           {{ end }}
@@ -63,3 +102,4 @@
     {{ end }}
   </section>
 {{ end }}
+

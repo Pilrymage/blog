@@ -179,55 +179,121 @@ a:focus {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2.75rem;
 }
 
 .home-entry {
-  padding: 2.25rem 0;
-  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+  padding: 2.5rem 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .home-entry:last-of-type {
   border-bottom: none;
+  padding-bottom: 0;
+}
+
+.home-entry--no-hero {
+  gap: 1.3rem;
+  padding: 2.25rem 0;
+}
+
+.home-entry__media {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 20px 42px rgba(12, 95, 102, 0.18);
+  background: var(--accent-soft);
+}
+
+.home-entry__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.home-entry__media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: rgba(12, 95, 102, 0.55);
+}
+
+.home-entry:hover .home-entry__media img,
+.home-entry:focus-within .home-entry__media img {
+  transform: scale(1.04);
+}
+
+.home-entry__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.home-entry--no-hero .home-entry__content {
+  align-items: center;
+  text-align: center;
 }
 
 .home-entry__badge {
-  display: inline-block;
-  padding: 0.2rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #fff;
-  margin-bottom: 0.9rem;
+  margin-top: 0.1rem;
 }
 
 .home-entry__title {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   margin: 0;
+  line-height: 1.35;
 }
 
 .home-entry__title a {
   border-bottom: none;
 }
 
-.home-entry__excerpt {
-  margin: 1rem auto 0;
-  max-width: 620px;
+.home-entry__summary {
+  margin: 0;
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 46rem;
+}
+
+.home-entry--no-hero .home-entry__summary {
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-entry__meta {
-  margin-top: 1.1rem;
   font-size: 0.85rem;
   letter-spacing: 0.06em;
   color: var(--text-muted);
   display: flex;
-  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.home-entry--no-hero .home-entry__meta {
+  justify-content: center;
 }
 
 .home-entry__meta-item {
@@ -1048,14 +1114,45 @@ a:focus {
 }
 
 .review-hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
   gap: 2.5rem;
   padding: 2.5rem;
   border: 1px solid var(--border-subtle);
   border-radius: 26px;
-  background: #fff;
+  background: rgba(253, 252, 250, 0.96);
   box-shadow: 0 24px 60px rgba(12, 95, 102, 0.1);
+  overflow: hidden;
+}
+
+.review-hero::before,
+.review-hero::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  transition: opacity 0.25s ease;
+}
+
+.review-hero::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 242, 232, 0.94));
+}
+
+.review-hero.has-hero::before {
+  background-image: var(--review-hero-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px);
+  opacity: 0.82;
+  transform: scale(1.06);
+}
+
+.review-hero.has-hero::after {
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 8%, rgba(255, 255, 255, 0.72) 100%);
+  opacity: 1;
 }
 
 .review-hero__media {
@@ -1068,7 +1165,8 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 18px 42px rgba(12, 95, 102, 0.22);
+  z-index: 1;
 }
 
 .review-hero__media img {
@@ -1091,6 +1189,16 @@ a:focus {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.review-hero.has-hero .review-hero__details {
+  background: rgba(255, 255, 255, 0.88);
+  padding: 1.6rem 1.9rem;
+  border-radius: 20px;
+  box-shadow: 0 18px 38px rgba(12, 95, 102, 0.18);
+  backdrop-filter: blur(8px);
 }
 
 .review-hero__meta {
@@ -1250,45 +1358,52 @@ a:focus {
 }
 
 @media (max-width: 720px) {
-  .reviews-category-card {
-    padding: 1.5rem;
+  .site-header__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
   }
 
-  .reviews-subnav ul {
-    gap: 0.5rem;
+  .site-nav ul {
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
-  .review-item {
-    grid-template-columns: minmax(0, 1fr);
+  .site-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
   }
 
-  .review-item__media {
-    width: 160px;
-    margin: 0 auto;
+  .lang-toggle {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
   }
 
-  .review-item__headline {
-    flex-direction: column;
-    align-items: flex-start;
+  .home-entry {
+    gap: 1.25rem;
+    padding: 2rem 0;
   }
 
-  .review-item__cta {
-    align-items: flex-start;
+  .home-entry__media {
+    aspect-ratio: 5 / 3;
+    box-shadow: 0 18px 32px rgba(12, 95, 102, 0.16);
   }
 
-  .review-hero {
-    padding: 1.75rem;
-    gap: 1.75rem;
+  .home-entry__title {
+    font-size: 1.45rem;
   }
 
-  .review-hero__title {
-    font-size: 2rem;
+  .home-entry__summary {
+    font-size: 0.95rem;
   }
 
-  .review-hero__info {
-    grid-template-columns: minmax(0, 1fr);
+  .home-entry__meta {
+    font-size: 0.8rem;
   }
 }
+
 
 @media (max-width: 640px) {
   .search-form__field {
@@ -1345,6 +1460,45 @@ a:focus {
     flex-wrap: wrap;
     gap: 0.75rem;
   }
+
+  .site-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .lang-toggle {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .home-entry {
+    gap: 1.25rem;
+    padding: 2rem 0;
+  }
+
+  .home-entry__media {
+    aspect-ratio: 5 / 3;
+    box-shadow: 0 18px 32px rgba(12, 95, 102, 0.16);
+  }
+
+  .home-entry__title {
+    font-size: 1.45rem;
+  }
+
+  .home-entry__summary {
+    font-size: 0.95rem;
+  }
+
+  .home-entry__meta {
+    font-size: 0.8rem;
+  }
+}
+
+
+  .home-entry__meta {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1369,3 +1523,13 @@ a:focus {
 .badge-default {
   background: var(--badge-default);
 }
+
+
+
+
+
+
+
+
+
+

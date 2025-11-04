@@ -34,9 +34,32 @@
   {{ $region := .Params.region }}
   {{ $language := .Params.language }}
   {{ $wordLabel := partial "wordcount.html" . }}
+  {{ $heroImage := "" }}
+  {{ with .Params.hero }}
+    {{ if (reflect.IsMap .) }}
+      {{ with or .image .src .url }}
+        {{ $heroImage = . }}
+      {{ end }}
+    {{ else }}
+      {{ $heroImage = . }}
+    {{ end }}
+  {{ end }}
+  {{ if and (eq $heroImage "") (.Params.heroImage) }}
+    {{ $heroImage = .Params.heroImage }}
+  {{ end }}
+  {{ if and (eq $heroImage "") (.Params.featured_image) }}
+    {{ $heroImage = .Params.featured_image }}
+  {{ end }}
+  {{ if and (eq $heroImage "") (.Params.image) }}
+    {{ $heroImage = .Params.image }}
+  {{ end }}
+  {{ $heroStyle := "" }}
+  {{ if $heroImage }}
+    {{ $heroStyle = printf "--review-hero-image:url(%q);" $heroImage }}
+  {{ end }}
 
   <article class="content-article review-article">
-    <header class="review-hero">
+    <header class="review-hero{{ if $heroImage }} has-hero{{ end }}" {{ if $heroStyle }}style="{{ $heroStyle | safeHTMLAttr }}"{{ end }}>
       <div class="review-hero__media" {{ if $coverAspect }}style="--review-cover-aspect: {{ $coverAspect }};"{{ end }}>
         {{ if $coverImage }}
           {{ if $coverTarget }}
@@ -87,9 +110,9 @@
             {{- end -}}
           </p>
         {{ end }}
-        {{ with or .Params.summary .Summary }}
+        <!-- {{ with or .Params.summary .Summary }}
           <p class="review-hero__summary">{{ . | plainify }}</p>
-        {{ end }}
+        {{ end }} -->
 
         <div class="review-hero__highlights">
           {{ with $scoreValue }}
@@ -160,3 +183,4 @@
     </footer>
   </article>
 {{ end }}
+
