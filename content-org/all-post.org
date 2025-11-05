@@ -73,7 +73,19 @@ CLOSED: [2025-10-29 Wed 21:00]
 :EXPORT_FILE_NAME: _index
 :END:
 
-* TODO template
+* TODO Template
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-01-01 # 评分时间
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
 * DONE “九大艺术”
 CLOSED: [2025-08-24 Sun 17:25]
 :PROPERTIES:

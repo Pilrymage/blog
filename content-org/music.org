@@ -12,19 +12,18 @@
 :END:
 #+begin_src toml :front_matter_extra t
   date = 2025-08-27 # 评分时间
-  media_type =  "music" # 作品类型
-  creator = "Outkast" # 创作者
-  creator_label = "LaFace Records" # 厂牌
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
   release_date = "1998" # 作品发行/上映日期
   score = 8.5 # 分数
-  cover.aspect="1:1"
 
-  genres = ["hip.hop"]
+  genres = ["historical"]
   recommended = true
-  recommendations = []
-  summary = ""
+  kicker = ""
   [cover]
-  image = "https://ptpimg.me/ux36rp.jpg"
+  image = ""
+  hero = 
 #+end_src
 * TODO Skintone Edition Volume 1
 :PROPERTIES:

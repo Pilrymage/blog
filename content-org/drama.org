@@ -6,7 +6,6 @@
 :EXPORT_FILE_NAME: _index
 :END:
 
-
 * TODO Template
 :PROPERTIES:
 :EXPORT_FILE_NAME: template
@@ -21,7 +20,6 @@
 
   genres = ["historical"]
   recommended = true
-  recommendations = []
   kicker = ""
   [cover]
   image = ""
