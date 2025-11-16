@@ -294,3 +294,58 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 :END:
 
 * TODO 信息熵的藝術：個人 RSS 閱讀工具基礎建設
+* TODO XSWCTF 2025 WP
+:PROPERTIES:
+:EXPORT_FILE_NAME: xswctf-2025
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-11-16 # 评分时间
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
+
+** Easy_Base
+- Take1: 把所有等號給去掉，以Base64解碼，發現第奇數個字符是正常的（尤其是包含 ~X?W?T?{~ 暗示flag開頭），考慮其中有規律；
+- Take2: 發現這些字符是四分一組的，把四個等號分成兩個，再反轉那些等號在開頭的各字串。得到這些字串都是以單字符生成的 Base64。正解。
+** CaesarCerydra
+
+** 01 交響曲
+- Take1: 注意到所有編碼分組有且僅有16種情況，這可能對應一種特殊碼表。
+  “交響曲”即音頻之編碼。聯想到“嗶嗶嗶”的摩斯編碼映射，試以0映射短按鍵，1映射長按鍵，正解。
+- Take2: 
+** 簡單愛2.0
+
+** ResNet
+
+** 哈基米
+- Take1: 在VSCode裏打開文本，發現U+301的零寬字符。考慮這是零寬字符隱寫。
+- Take2: “哈基米方言”+一串uuid，剛好暗示特殊的哈基米加解密工具。正解。
+** 認識一下SCNU吧
+- Take1: 圖像常規檢查， ~binwalk -e~ 找出加密壓縮包。
+- Take2: zip 壓縮包內文件 ~plaintext~ 暗示明文攻擊破解包，CTF Wiki 亦有記載。
+  用更新的 ~bkcrack~ 解題，此題已知部分flag明文 ~XSWCTF{SCNU~ ，其中 ~SCNU~ 需要聯系題意碰運氣相出。
+  成功破題，正解。
+** easy_ssti
+- Take1: 用 ~curl -v~ 查看修改內容。貫穿本 CTF Web 題的手法，手改 session。正解。
+** CNN
+
+** PyChecker
+- Take1: 檢視源碼，這是一個只運行函數定義的檢查程序。然而修飾器是會在函數定義前先執行的（我最喜歡λ）
+  寫一套腳本。
+** 寬體Meme庫查詢
+- Take1: “寬體”+html源碼的GBK暗示此題的技巧。加一個寬位就能做到隨意SQL注入。
+  找出注入列
+** secret
+- Take1: 掃出源碼
+** ez_unser
+- 
+** Spring_el
+- Take1: 反編譯jar包。
+** File System
+- 
+** lottery
+- 暗示 /source 
