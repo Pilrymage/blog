@@ -25,7 +25,7 @@
   image = ""
   hero = 
 #+end_src
-* Boardwalk Empire
+* 大西洋帝國 Boardwalk Empire
 :PROPERTIES:
 :EXPORT_FILE_NAME: boardwalk-empire
 :END:
@@ -46,7 +46,7 @@ image = "https://ptpimg.me/4b49h2.jpg"
 #+end_src
 
 Under construction
-* The Sopranos
+* 黑道家族 The Sopranos
 :PROPERTIES:
 :EXPORT_FILE_NAME: the-sopranos
 :END:
@@ -66,8 +66,7 @@ summary = ""
 image = "https://ptpimg.me/907603.jpg"
 #+end_src
 
-Under construction
-* Mad Men
+* 廣告狂人 Mad Men
 :PROPERTIES:
 :EXPORT_FILE_NAME: mad-men
 :END:
@@ -88,7 +87,7 @@ image = "https://ptpimg.me/j6ki0j.jpg"
 #+end_src
 
 Under construction
-* Better Call Saul
+* 風騷律師 Better Call Saul
 :PROPERTIES:
 :EXPORT_FILE_NAME: better-call-saul
 :END:
@@ -113,7 +112,7 @@ image = "https://ptpimg.me/2s302a.jpg"
 
 
 Under construction
-* The Wire
+* 火綫 The Wire
 :PROPERTIES:
 :EXPORT_FILE_NAME: the-wire
 :END:
@@ -163,7 +162,7 @@ Under construction
 更奇妙的是這一張的人物造型看上去就像[[https://music.163.com/album?id=531877&uct2=U2FsdGVkX1][同名OST]]的封面。
 作爲一個看上去很有歷史感（各種意義上）的韓劇，爲什麼OST又別有一番藝術感呢？
 
-[[https://movie.douban.com/subject/1418660/][豆瓣]]上的封面直接引用日本的“宮廷女官チャングムの誓い”
+[[HTTPS://movie.douban.com/subject/1418660/][豆瓣]]上的封面直接引用日本的“宮廷女官チャングムの誓い”
 （宮廷女官長今的誓言）作爲標題。
 可能是這個總集篇封面看來更加喜慶。
 
@@ -171,3 +170,171 @@ Under construction
 當然，多看韓劇就知道，韓國人一般不給出漢字名，用音譯是對的。
 反而是中文字幕組都是先給人猜一個漢字名。
 #+end_quote
+
+2005年，湖南卫視在《超女》之後即接上了重金購入的韓劇《大長今》，
+標榜爲“青春勵志”劇，成爲一代經典記憶。
+
+李氏朝鲜唯一一位为国王治病的医女。
+我
+* JIN - 仁
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 我的大叔
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: my-dear
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 逃避虽可耻但有用
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 寬鬆世代又如何
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 半沢直樹
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 勝者即是正義 Legal High
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 惡搞之家 Family Guy
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 絕命毒師 Breaking Bad
+
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-08-27 # 评分时间
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
+#+end_src
+* 神秘博士 Doctor Who
+* 羅馬 Rome
