@@ -287,6 +287,8 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 ** Hugo：最快的静态网页生成器
 ** GPT Codex：个人主题定制
+Codex 等寫代碼的AI應該相當擅長前端。尤其是，它讀過的博客代碼應該比我們看得多得多。
+發揮一點樸素的美感，給自己的前端寫箇個人主題吧！這比 Wordpress 的拖標籤爽快多了。
 ** GitHub：部署托管个人网页
 * TODO Google Calendar + Thunderbird：大學生課表與工作安排入門
 :PROPERTIES:
@@ -294,3 +296,155 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 :END:
 
 * TODO 信息熵的藝術：個人 RSS 閱讀工具基礎建設
+* TODO 給我一個買mp3、遊戲機、電子書和手柄的理由（手機不好玩嗎？）
+:PROPERTIES:
+:EXPORT_FILE_NAME: buying-advice
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-01-01 # 评分时间
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src 
+
+** 專器專用
+** 買mp3
+超出預期的體驗：
+- 音量的調節粒度更細
+- 支持flac無損音頻，相比於套殼解碼器只能播放mp3。
+- 更實在的機械按鍵，不用看屏幕操作
+** 買手柄
+** 觀望遊戲機與電子書
+
+* TODO chezmoi：全平臺配置文件管理                             :linux:windows:
+:PROPERTIES:
+:EXPORT_FILE_NAME: chezmoi-dotfile
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-11-06 # 评分时间
+  # genres = ["historical"]
+  recommended = false
+  kicker = "Configure once, run anywhere"
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
+
+#+begin_quote
+把自己的 .emacs.d 搞丟的人，以後再也用不了 Emacs 了。
+不要學這種人
+#+end_quote
+
+能夠以 Linux 作爲桌面系統的系統管理員們，手上一定少不了一套高度定制化的 Linux 配置。
+但是對於發行版愛好者，弄壞系統并重裝各種版本的系統又時常發生（Archlinux：在想我的事？）。
+因而必須想辦法管理這些配置以方便系統遷移，也是 Linux 運維的基本操作。
+
+首先想到的當然是對純文本配置用 ~git~ 管理了吧，用一整個配置倉庫來管理。
+然而 Linux 配置的特色便是各有各的放法，比如 XDG 規定放在 ~$HOME/.config/<name>~ 下面，
+而 ~.bashrc~ ， ~.profile~ 等又是簡單放在 ~$HOME~ 下面。
+還有如 ~.emacs.d/~ 或放在 ~/etc~ 下面的系統配置。
+也有人想到用 ~git~ 的高階操作，可以讓倉庫添加文件而不必在倉庫的子目錄之內。
+但是這還是相當的不穩健——我感覺我 ~git branch~ 都沒用明白呢，到時後忘了指令該怎麼辦。
+
+升級版的配置方法是使用 [[https://www.gnu.org/software/stow/][GNU Stow]]，實質上是生成并管理符號鏈接的工具。
+一個相當無腦的用法是 ~cd ~/dotfile && stow .~ ，
+可以在家目錄下生成軟鏈接，指向配置文件與目錄。
+而你所需要的，只是 ~~/dotfile/.config~ ， ~~/dotfile/.emacs.d~ ，等等。
+然而還是有些缺陷：基於 Linux 符號鏈接的程序可能無法在 Windows 上面使用。
+但是有時也會需要在 Windows 上使用配置，比如 Rime 中州韻/小狼毫。
+
+~chezmoi~ 可以解决各平臺的配置文件問題。
+它真正地把 ~git~ 倉庫容納其中，倉庫中跟蹤的各文件情況對 ~chezmoi~ 可見，
+你可以使用 ~chezmoi~ 命令與配置倉庫交互，添加編寫好的配置文件。
+同時， ~chezmoi~ 支持 go 語言的模板，從而區分不同系統上的配置，其內部情況則封裝到 ~chezmoi~ 的倉庫裏。
+* TODO 真·自我提升與成長的網課及學習資源
+:PROPERTIES:
+:EXPORT_FILE_NAME: essential-e-learning
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-11-06 # 评分时间
+  # genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
+
+** 核心渠道：書與網課
+** 數理基礎（理科生並感）
+** 計算機
+** 經濟學/金融
+** 法律
+** 文史哲
+** 音樂美術
+* TODO 永遠爲你的學習準備第二本教材
+:PROPERTIES:
+:EXPORT_FILE_NAME: do-read-while
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-11-09 # 评分时间
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
+
+一本教材，或一套課程，含作者對一個領域的知識體系的思考。
+最被推崇的教材就更加地展現出作者的奇思妙想，按照學數學的來說即是 *高觀點* ，一下就能給你點清楚知識的關聯。
+同一個領域，不同的人就有不同的視點，所提供的體系的組織思路也不一樣。
+
+
+對於一些教學方法成熟的領域（比如高等數學），或許已經有了相對固定的學習路徑：
+先學初等函數和極限，然後入門一元微積分，再擴充到多元微積分，諸如此類。
+然而不同的教材有不同的着重點與不同的思路，仍然能讓你對高等數學大爲改觀，
+哪怕你只是知道數學系學的是進階的 *數學分析* ，都能讓你十分受用。
+
+- 《托馬斯微積分》就强調手算與大量物理學/生活實例，從頭算幾次三維曲面上的通量，就不會對抽象的數學畏難；
+  此書還大篇幅補充了初等函數的運算規則，讓高中生也能自學微積分。
+- 《數學分析原理》（Walter Rudin）則站在數學分析的高度，刻意只講分析與推導，弱化計算，
+  能夠快速培養對純數學的洞察力（insight），正與數學研究需要快速趕上研究前沿的需求相合（Yau 並感）。
+  #+begin_quote
+但是弱化計算使得此書不利於數學專業做題，建議配套數學分析習題集
+  #+end_quote 
+- 《流形上的分析》（Munkres）則直接提醒你建構實數系的本質是點集拓撲，而多元微積分的本質是流形上的積分。
+  這便是重新學習微積分的第三本書。
+
+# 醫學生的重復學習：
+# 兩個課程是如何
+
+1. 最推薦的教材首先得是行業內一致認可的經典之作，因爲人生苦短，市面上百分之九十的書都不必看。
+
+   這包括絕大部分中文作者的書——除了馬院和漢語言之外，想要取經還是得到西天，去讀老牌英美院校教學法滲透得最完整的教材。
+
+2. 你應能夠深刻地認同作者的教學邏輯，如果你不喜歡就拉倒，換一本書讀。
+
+   因爲人的興趣總是推進學習的動力，但是百分之十的經典著作也很多，成熟領域從舊到新至少有五六本書都能達到相同的目的，不如選一本讓自己開心的。
+
+3. 圖書之間知識點的關聯性與互補能力。
+
+   最直觀地，面向讀者水平不同，教材也能分出“XXX 101”“XXX Second class”“Advanced XXX”等等種類。
+   又或者是教材側重點不同，譬如同樣是和弦，流行、古典和爵士的樂理因爲演奏的音樂不同就能做出新的解釋。
+
+讀五六本書，讀得稍深一點，直到卡頓的地方，則切換到另一本書。
+然後，找到你比較喜歡的兩本書，深入閱讀全本。
+現在，AI聊天也相當好用，因爲它就是一個閱讀了市面上所有書的老師，只是不記得某段話出自哪裏。
+通過與高水平的AI對話（ie，最先進模型的“[[https://zh.wikipedia.org/wiki/%E9%95%BF%E8%80%83][長考]]”模式），可以極大地滿足學習的好奇心，亦能補充書上沒有的闕處。
+* TODO 學 Vim，Emacs，VSCode 最爽的瞬間 top 10
+:PROPERTIES:
+:EXPORT_FILE_NAME: to-learn-programmers-editor
+:END:
+#+begin_src toml :front_matter_extra t
+  date = 2025-01-01 # 评分时间
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
