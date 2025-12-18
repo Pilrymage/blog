@@ -2,6 +2,7 @@
 title = "2025年的四十問"
 date = 2025-12-18T17:26:00+08:00
 draft = false
+date = 2025-12-16 # 评分时间
 genres = ["historical"]
 recommended = true
 kicker = ""
@@ -186,7 +187,7 @@ hero = ""
 
 24. **你最喜欢的电视节目是什么？**
 
-    [大長今]({{< relref "jewel-in-the-palace" >}}) 是我今年刷得最快的電視劇。這種帶點歷史背景的劇是很好的。
+    大長今是我今年刷得最快的電視劇。這種帶點歷史背景的劇是很好的。
 
     [仁醫](https://movie.douban.com/subject/3892394/) 也挺不錯。
 

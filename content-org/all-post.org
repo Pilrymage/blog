@@ -576,10 +576,8 @@ Calibre 是一個開源的圖書管理工具。自然，它也對最出名的閱
 CLOSED: [2025-12-18 Thu 17:26]
 :PROPERTIES:
 :EXPORT_FILE_NAME: 40-questions-2025
-:EXPORT_FILE_NAME: 40-questions-2025
 :END:
 #+begin_src toml :front_matter_extra t
-  date = 2025-12-16 # 评分时间
   date = 2025-12-16 # 评分时间
   genres = ["historical"]
   recommended = true
@@ -767,7 +765,7 @@ CLOSED: [2025-12-18 Thu 17:26]
 
 24. *你最喜欢的电视节目是什么？*
 
-    [[file:drama.org::*大長今][大長今]] 是我今年刷得最快的電視劇。這種帶點歷史背景的劇是很好的。
+    大長今是我今年刷得最快的電視劇。這種帶點歷史背景的劇是很好的。
 
     [[https://movie.douban.com/subject/3892394/][仁醫]] 也挺不錯。
     
