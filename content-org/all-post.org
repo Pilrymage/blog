@@ -578,7 +578,6 @@ CLOSED: [2025-12-18 Thu 17:26]
 :EXPORT_FILE_NAME: 40-questions-2025
 :END:
 #+begin_src toml :front_matter_extra t
-  date = 2025-12-16 # 评分时间
   genres = ["historical"]
   recommended = true
   kicker = ""
