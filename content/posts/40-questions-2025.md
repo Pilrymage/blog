@@ -2,7 +2,6 @@
 title = "2025年的四十問"
 date = 2025-12-18T17:26:00+08:00
 draft = false
-date = 2025-12-16 # 评分时间
 genres = ["historical"]
 recommended = true
 kicker = ""

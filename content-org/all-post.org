@@ -127,19 +127,27 @@ CLOSED: [2025-08-19 Tue 21:41]
 男性更易脱发，关键在于睾酮部分地(10%)转化为 DHT，
 而 DHT 主要起到第二性征发育的作用，过了青春期后只能产生让人毛囊收缩消失的后果。
 非那雄胺是一种 5-alpha 还原酶(5ar)抑制剂，通过阻止 5-alpha 还原酶将睾酮转化为 DHT 实现减缓雄脱。
+男性更易脱发，关键在于睾酮部分地(10%)转化为 DHT，
+而 DHT 主要起到第二性征发育的作用，过了青春期后只能产生让人毛囊收缩消失的后果。
+非那雄胺是一种 5-alpha 还原酶(5ar)抑制剂，通过阻止 5-alpha 还原酶将睾酮转化为 DHT 实现减缓雄脱。
 由此，非那雄胺更多是阻止继续掉发，或许能稍微恢复一点头发，也有些人的生发效果很好。
 
 5ar 抑制剂对剂量不敏感，0.2mg 用量可以减少 68% 的 DHT， 5mg 用量可以减少 72% 的 DHT。
+5ar 抑制剂对剂量不敏感，0.2mg 用量可以减少 68% 的 DHT， 5mg 用量可以减少 72% 的 DHT。
 度他雄胺的效果更强，0.5mg 用量可以减少 95% 的 DHT，但是会更贵一些。
+度他雄胺的半衰期为 8 小时，每天吃一片，疗程三个月。
 度他雄胺的半衰期为 8 小时，每天吃一片，疗程三个月。
 
 非那雄胺长期用于治疗前列腺增生，对人的副作用与效果已经被研究得很明白了，
 我的外公也吃非那雄胺，他是治前列腺不行，老人漏尿的。
 但有 1-2%的可能性会导致 ED。说实话对于
 可以通过减少摄入药物等来避免。保法止 1mg 足以起到防脱发作用。
+但有 1-2%的可能性会导致 ED。说实话对于
+可以通过减少摄入药物等来避免。保法止 1mg 足以起到防脱发作用。
 
 ** 米那地尔
 米那地尔(Minoxidil)通过打开钾离子通道，扩张头顶毛囊血管从而刺激毛发生长期。
+米那地尔配合非那雄胺来恢复头发，在脱发早期（NW2 期之前）最有效果。
 米那地尔配合非那雄胺来恢复头发，在脱发早期（NW2 期之前）最有效果。
 
 ** 酮康唑
@@ -147,8 +155,10 @@ CLOSED: [2025-08-19 Tue 21:41]
 ** 雌激素
 
 抗雄激素：螺内酯(spirolactone) 通过抑止睾酮，从而抑止 DHT。
+抗雄激素：螺内酯(spirolactone) 通过抑止睾酮，从而抑止 DHT。
 雌激素：戊酸雌二醇，用于补充雌激素，防止性激素紊乱。
 
+注意这些药用于男性转女性的激素替代疗法，比 5ar 抑制剂更加容易导致性功能问题。
 注意这些药用于男性转女性的激素替代疗法，比 5ar 抑制剂更加容易导致性功能问题。
 但是，的确有人为了有女性一样的发质而吃抗雄激素与雌激素。
 * DONE Windows 资源汇总                                                :windows:
@@ -168,7 +178,12 @@ CLOSED: [2025-08-19 Tue 21:45]
 *Win10 Enterprise IoT LTSC 2021* is all you need.
 - 🉑安全更新到 2032 年，让微软多修几年 Win11。\\
   对比：企业 LTSC 版支持到 2027 年，企业物联网 LTSC 版又多五年支持
+- 🉑安全更新到 2032 年，让微软多修几年 Win11。\\
+  对比：企业 LTSC 版支持到 2027 年，企业物联网 LTSC 版又多五年支持
 - 没有多余应用，等同于精简版；\\
+  预安装 Edge 浏览器和 Win32 系统应用。
+- 与 LTSC 在二进制水平上完全相同，除了没有 MS Store。\\
+  下载 MS Store： ~wsreset -i~ 。
   预安装 Edge 浏览器和 Win32 系统应用。
 - 与 LTSC 在二进制水平上完全相同，除了没有 MS Store。\\
   下载 MS Store： ~wsreset -i~ 。
@@ -184,7 +199,10 @@ CLOSED: [2025-08-19 Tue 21:45]
 
 其他 Win10/Win11 家庭版/专业版/教育版/企业版/企业版 IoT
 - 预安装 Edge, Win32 系统应用，MS Store，OneDrive, 天气，电影，音乐，Candy Crush，等等
+其他 Win10/Win11 家庭版/专业版/教育版/企业版/企业版 IoT
+- 预安装 Edge, Win32 系统应用，MS Store，OneDrive, 天气，电影，音乐，Candy Crush，等等
 - 特性更新时自动更新应用
+- 仅 1.5~3 年支持
 - 仅 1.5~3 年支持
 - 强制更新
 
@@ -213,6 +231,7 @@ Linux 比 Windows 好就好在有一个包管理器，
 好在现在 Windows 的可用包管理器与 Win10 和 Powershell 结合得很好，
 
 - [[https://chocolatey.org/][Chocolatey]] 是 Windows 的经典软件包管理器。您可以在其中找到所有需要的东西。
+- [[https://chocolatey.org/][Chocolatey]] 是 Windows 的经典软件包管理器。您可以在其中找到所有需要的东西。
 - [[https://scoop.sh/][Scoop]] 包含不知名但有用的实用程序和其它有趣软件包的重要存储库。
 - [[https://github.com/microsoft/winget-cli][Winget]] 是微软的官方软件包管理器。拥有知名的、经过验证的众多软件包。
 
@@ -231,6 +250,7 @@ Linux 比 Windows 好就好在有一个包管理器，
 
 推荐（付费视频）教程：[[https://space.bilibili.com/18211708/pugv?defaultTab=cheese][向天歌的PPT/Excel/Word大神上分攻略]]。\\
 配套电子书教材：PPT 之光/Excel 之光/Word 之光。
+配套电子书教材：PPT 之光/Excel 之光/Word 之光。
 : 我曾拜读过 Oeasy 老师的教程，现在就感觉这玩意还是太老了且缺乏体系，
 : 拿出来个系统是 Windows Vista，Office 2007。
 : 虽然我也曾认为 Office 2003 是 Golden Standard，
@@ -242,6 +262,7 @@ Linux 比 Windows 好就好在有一个包管理器，
 - *查找与替换* ，大家都很熟悉正则表达式吧，Word 也有这种东西
 - *邮件合并* 虽然听上去很没用，但也是计算机二级的考点，还有一些妙用
 * TODO Emacs, Hugo, Codex：2025 年搭建个人博客的三位一体        :emacs:hugo:ai:
+* TODO Emacs, Hugo, Codex：2025 年搭建个人博客的三位一体        :emacs:hugo:ai:
 :PROPERTIES:
 :EXPORT_FILE_NAME: blog-the-fastman-way
 :END:
@@ -249,6 +270,8 @@ Linux 比 Windows 好就好在有一个包管理器，
 我看 Emacs-Hugo + Codex 搞得不错，静态网页生态极大丰富，迁移困难基本消灭，网站风格、程序员审美也受重视，
 如果加上我的雄文，这就是我理想中的博客站点^{[21]}。
 #+end_quote
+我大一大二(2021 年)时就开始研究搭建个人博客与 md，
+当时使用基于 Hexo 的博客工具，连命令行与 npm 都玩不转，部署起来十分痛苦。
 我大一大二(2021 年)时就开始研究搭建个人博客与 md，
 当时使用基于 Hexo 的博客工具，连命令行与 npm 都玩不转，部署起来十分痛苦。
 现在过了四年，略通一点博客的搭建思路，分享出来，让更多人不走弯路。
@@ -288,6 +311,7 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ** Hugo：最快的静态网页生成器
 ** GPT Codex：个人主题定制
 Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博客代碼應該比我們看得多得多。
+Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博客代碼應該比我們看得多得多。
 發揮一點樸素的美感，給自己的前端寫箇個人主題吧！這比 Wordpress 的拖標籤爽快多了。
 ** GitHub：部署托管个人网页
 * TODO Google Calendar + Thunderbird：大學生課表與工作安排入門
@@ -297,6 +321,7 @@ Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博�
 
 * TODO 信息熵的藝術：個人 RSS 閱讀工具基礎建設
 <<<<<<< HEAD
+* TODO 給我一個買 mp3、遊戲機、電子書和手柄的理由（手機不好玩嗎？）
 * TODO 給我一個買 mp3、遊戲機、電子書和手柄的理由（手機不好玩嗎？）
 :PROPERTIES:
 :EXPORT_FILE_NAME: buying-advice
@@ -313,8 +338,10 @@ Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博�
 
 ** 專器專用
 ** 買 mp3
+** 買 mp3
 超出預期的體驗：
 - 音量的調節粒度更細
+- 支持 flac 無損音頻，相比於套殼解碼器只能播放 mp3。
 - 支持 flac 無損音頻，相比於套殼解碼器只能播放 mp3。
 - 更實在的機械按鍵，不用看屏幕操作
 ** 買手柄
@@ -549,8 +576,10 @@ Calibre 是一個開源的圖書管理工具。自然，它也對最出名的閱
 CLOSED: [2025-12-18 Thu 17:26]
 :PROPERTIES:
 :EXPORT_FILE_NAME: 40-questions-2025
+:EXPORT_FILE_NAME: 40-questions-2025
 :END:
 #+begin_src toml :front_matter_extra t
+  date = 2025-12-16 # 评分时间
   date = 2025-12-16 # 评分时间
   genres = ["historical"]
   recommended = true
