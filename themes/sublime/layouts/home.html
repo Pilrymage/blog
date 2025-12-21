@@ -32,7 +32,7 @@
                 {{ $hero = . }}
               {{ end }}
             {{ else }}
-              {{ $hero = . }}
+              {{ $hero = relURL . }}
             {{ end }}
           {{ end }}
           {{ if and (eq $hero "") (.Params.heroImage) }}

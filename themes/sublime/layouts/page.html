@@ -34,7 +34,7 @@
 {{ $hasHero := ne $heroURL "" }}
 <article class="content-article">
   <header class="content-article__header{{ if not $hasHero }} content-article__header--plain{{ end }}">
-    <div class="content-article__hero"{{ if $hasHero }} style="--article-hero:url('{{ $heroURL }}');"{{ end }}>
+    <div class="content-article__hero"{{ if $hasHero }} style="--article-hero:url('{{ $heroURL | safeURL }}');"{{ end }}>
       <div class="content-article__hero-meta">
         {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
         <span>
