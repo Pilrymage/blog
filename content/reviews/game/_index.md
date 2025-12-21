@@ -1,4 +1,0 @@
-+++
-title = "Game"
-draft = false
-+++

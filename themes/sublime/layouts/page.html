@@ -1,27 +1,62 @@
 {{ define "main" }}
+{{ $hero := "" }}
+{{ with .Params.hero }}
+  {{ if (reflect.IsMap .) }}
+    {{ with or .image .src .url }}
+      {{ $hero = . }}
+    {{ end }}
+  {{ else }}
+    {{ $hero = . }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $hero "") (.Params.cover) }}
+  {{ with .Params.cover.hero }}
+    {{ $hero = . }}
+  {{ end }}
+{{ end }}
+{{ if and (eq $hero "") (.Params.heroImage) }}
+  {{ $hero = .Params.heroImage }}
+{{ end }}
+{{ if and (eq $hero "") (.Params.featured_image) }}
+  {{ $hero = .Params.featured_image }}
+{{ end }}
+{{ if and (eq $hero "") (.Params.image) }}
+  {{ $hero = .Params.image }}
+{{ end }}
+{{ $heroURL := "" }}
+{{ if $hero }}
+  {{ if or (hasPrefix $hero "http://") (hasPrefix $hero "https://") }}
+    {{ $heroURL = $hero }}
+  {{ else }}
+    {{ $heroURL = $hero | relURL }}
+  {{ end }}
+{{ end }}
+{{ $hasHero := ne $heroURL "" }}
 <article class="content-article">
-  <header class="content-article__header">
-    <h1>{{ .Title }}</h1>
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    <p class="content-article__meta">
-      <time datetime="{{ $dateMachine }}">{{ .Date.Format "2006-01-02" }}</time>
-      {{ with .Params.author }} · <span>{{ . }}</span>{{ end }} ·
-      <span>{{ .WordCount }} 字</span>
-    </p>
+  <header class="content-article__header{{ if not $hasHero }} content-article__header--plain{{ end }}">
+    <div class="content-article__hero"{{ if $hasHero }} style="--article-hero:url('{{ $heroURL }}');"{{ end }}>
+      <div class="content-article__hero-meta">
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        <span>
+          <time datetime="{{ $dateMachine }}">{{ .Date.Format "2006-01-02" }}</time>
+        </span>
+        {{ with or .Lastmod .Date }}
+          <span>· {{ .Format "2006-01-02" }}</span>
+        {{ end }}
+        {{ with .Params.categories }}
+          <span>· {{ index . 0 }}</span>
+        {{ end }}
+        <span>· {{ .WordCount }} 字</span>
+      </div>
+      <h1>{{ .Title }}</h1>
+    </div>
+    {{ with .Params.summary }}
+      <p class="content-article__summary">{{ . }}</p>
+    {{ end }}
   </header>
   <div class="content-article__body">{{ .Content }}</div>
   <footer class="content-article__footer">
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-    <nav class="post-nav" aria-label="Post navigation">
-      {{ with .PrevInSection }}
-      <a class="post-nav__item prev" href="{{ .RelPermalink }}"
-        >&larr; {{ .Title }}</a
-      >
-      {{ end }} {{ with .NextInSection }}
-      <a class="post-nav__item next" href="{{ .RelPermalink }}"
-        >{{ .Title }} &rarr;</a
-      >
-      {{ end }}
     </nav>
   </footer>
 </article>
