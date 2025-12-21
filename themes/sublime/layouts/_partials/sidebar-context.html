@@ -1,0 +1,12 @@
+<section class="context-panel">
+  {{ if and .IsPage .TableOfContents }}
+    <div class="context-panel__section">
+      <h2 class="context-panel__title"> 文章目录</h2>
+      <div class="context-panel__toc">
+        {{ .TableOfContents }}
+      </div>
+    </div>
+  {{ else }}
+    <p class="context-panel__empty">这里会展示与当前页面相关的内容。</p>
+  {{ end }}
+</section>

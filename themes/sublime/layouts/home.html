@@ -1,105 +1,164 @@
 {{ define "main" }}
-  <section class="intro-block">
-    {{ partial "artform" }}
-    <!-- {{ with .Site.Params.homeInfoParams.Title }}
-      <h2>{{ . }}</h2>
-    {{ end }} -->
-    {{ with .Site.Params.homeInfoParams.Content }}
-      <div class="intro-copy">{{ . | markdownify }}</div>
-    {{ else }}
-      <p>{{ .Site.Params.description }}</p>
-    {{ end }}
-  </section>
-  <section class="post-list">
-    <h2 class="section-title">最新文章</h2>
-    {{ $homeSections := slice "posts" "reviews" }}
-    {{ $entries := where .Site.RegularPages "Section" "in" $homeSections }}
-    {{ if not (gt (len $entries) 0) }}
+  {{ $homeSections := slice "posts" "reviews" }}
+  {{ $entries := where .Site.RegularPages "Section" "in" $homeSections }}
+  {{ $sorted := $entries.ByDate.Reverse }}
+  {{ $paginator := .Paginate $sorted 10 }}
+  {{ $total := len $entries }}
+  <section class="feed">
+    <header class="feed__header">
+      <div>
+        <p class="feed__subhead">最新更新</p>
+        <h1 class="feed__title">近期文章</h1>
+      </div>
+      <span class="feed__count">{{ $total }} 篇</span>
+    </header>
+    {{ if not (gt $total 0) }}
       <p class="empty-copy">暂无文章，稍后再来看看。</p>
     {{ else }}
-      {{ $badgeMap := dict
-        "posts" (dict "label" "想法" "class" "badge-idea")
-        "reviews" (dict "label" "评论" "class" "badge-review")
-      }}
-      {{ range ($entries.GroupByDate "2006") }}
-        <h3 class="year-heading">{{ .Key }}</h3>
-        <div class="post-list__items">
-          {{ range .Pages.ByDate.Reverse }}
-            {{ $section := .Section }}
-            {{ $badgeMeta := index $badgeMap $section }}
-            {{ $badgeClass := default "badge-default" (and $badgeMeta (index $badgeMeta "class")) }}
-            {{ $badgeLabel := default (title $section) (and $badgeMeta (index $badgeMeta "label")) }}
-            {{ $hero := "" }}
-            {{ with .Params.hero }}
-              {{ if (reflect.IsMap .) }}
-                {{ with or .image .src .url }}
-                  {{ $hero = . }}
-                {{ end }}
-              {{ else }}
+      <div class="feed__list">
+        {{ $badgeMap := dict
+          "posts" (dict "label" "想法" "class" "badge-idea")
+          "reviews" (dict "label" "评论" "class" "badge-review")
+        }}
+        {{ range $paginator.Pages }}
+          {{ $section := .Section }}
+          {{ $badgeMeta := index $badgeMap $section }}
+          {{ $badgeClass := default "badge-default" (and $badgeMeta (index $badgeMeta "class")) }}
+          {{ $badgeLabel := default (title $section) (and $badgeMeta (index $badgeMeta "label")) }}
+          {{ $hero := "" }}
+          {{ with .Params.hero }}
+            {{ if (reflect.IsMap .) }}
+              {{ with or .image .src .url }}
                 {{ $hero = . }}
               {{ end }}
+            {{ else }}
+              {{ $hero = . }}
             {{ end }}
-            {{ if and (eq $hero "") (.Params.heroImage) }}
-              {{ $hero = .Params.heroImage }}
-            {{ end }}
-            {{ if and (eq $hero "") (.Params.featured_image) }}
-              {{ $hero = .Params.featured_image }}
-            {{ end }}
-            {{ if and (eq $hero "") (.Params.image) }}
-              {{ $hero = .Params.image }}
-            {{ end }}
-            {{ $summary := "" }}
-            {{ with .Params.kicker }}
-              {{ $summary = . }}
-            {{ end }}
-            {{ if and (eq $summary "") (.Params.summary) }}
-              {{ $summary = .Params.summary }}
-            {{ end }}
-            {{ if and (eq $summary "") (.Params.description) }}
-              {{ $summary = .Params.description }}
-            {{ end }}
-            {{ if eq $summary "" }}
-              {{ $summary = (.Summary | plainify) | truncate 128 }}
-            {{ end }}
-            {{ $entryClass := "home-entry" }}
-            {{ if not $hero }}
-              {{ $entryClass = printf "%s %s" $entryClass "home-entry--no-hero" }}
-            {{ end }}
-            <article class="{{ $entryClass }}">
-              {{ if $hero }}
-                <a class="home-entry__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-                  <img src="{{ $hero }}" alt="" loading="lazy">
-                </a>
-              {{ end }}
-              <div class="home-entry__content">
-                <span class="home-entry__badge {{ $badgeClass }}">{{ $badgeLabel }}</span>
-                <h3 class="home-entry__title">
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h3>
-                {{ with $summary }}
-                  <p class="home-entry__summary">{{ . }}</p>
-                {{ end }}
-                <div class="home-entry__meta">
-                  <span class="home-entry__meta-item">
-                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-                  </span>
-                  <span class="home-entry__meta-item">
-                    {{ printf "%d 字" .WordCount }}
-                  </span>
-                  {{ with .Params.tags }}
-                    <span class="home-entry__meta-item home-entry__tags">
-                      {{ range . }}
-                        <span>{{ . }}</span>
-                      {{ end }}
-                    </span>
-                  {{ end }}
-                </div>
-              </div>
-            </article>
           {{ end }}
-        </div>
+          {{ if and (eq $hero "") (.Params.heroImage) }}
+            {{ $hero = .Params.heroImage }}
+          {{ end }}
+          {{ if and (eq $hero "") (.Params.featured_image) }}
+            {{ $hero = .Params.featured_image }}
+          {{ end }}
+          {{ if and (eq $hero "") (.Params.image) }}
+            {{ $hero = .Params.image }}
+          {{ end }}
+          {{ $summary := "" }}
+          {{ with .Params.kicker }}
+            {{ $summary = . }}
+          {{ end }}
+          {{ if and (eq $summary "") (.Params.summary) }}
+            {{ $summary = .Params.summary }}
+          {{ end }}
+          {{ if and (eq $summary "") (.Params.description) }}
+            {{ $summary = .Params.description }}
+          {{ end }}
+          {{ if eq $summary "" }}
+            {{ $summary = (.Summary | plainify) | truncate 128 }}
+          {{ end }}
+          {{ $entryClass := "feed-card" }}
+          {{ if $hero }}
+            {{ $entryClass = printf "%s %s" $entryClass "feed-card--has-thumb" }}
+          {{ else }}
+            {{ $entryClass = printf "%s %s" $entryClass "feed-card--no-thumb" }}
+          {{ end }}
+          <a class="{{ $entryClass }}" href="{{ .RelPermalink }}" role="article" aria-label="阅读 {{ .Title }}">
+            <div class="feed-card__body">
+              <div class="feed-card__eyebrow">
+                <span class="feed-card__badge {{ $badgeClass }}">{{ $badgeLabel }}</span>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                <span>·</span>
+                <span>{{ printf "%d 字" .WordCount }}</span>
+              </div>
+              <h2 class="feed-card__title">{{ .Title }}</h2>
+              {{ with $summary }}
+                <p class="feed-card__summary">{{ . }}</p>
+              {{ end }}
+              <div class="feed-card__meta">
+                {{ with .Params.tags }}
+                  <div class="feed-card__tags">
+                    {{ range first 3 . }}
+                      <span>{{ . }}</span>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+            {{ if $hero }}
+              <div class="feed-card__thumb" aria-hidden="true">
+                <img src="{{ $hero }}" alt="" loading="lazy">
+              </div>
+            {{ end }}
+          </a>
+        {{ end }}
+      </div>
+      {{ if gt $paginator.TotalPages 1 }}
+        <nav class="feed-pager" aria-label="分页">
+          <ul class="feed-pager__list">
+            <li>
+              {{ with $paginator.Prev }}
+                <a class="feed-pager__link feed-pager__link--nav" href="{{ .URL }}">上一页</a>
+              {{ else }}
+                <span class="feed-pager__link feed-pager__link--nav is-disabled">上一页</span>
+              {{ end }}
+            </li>
+            {{ range $p := $paginator.Pagers }}
+              <li>
+                {{ if eq $p.PageNumber $paginator.PageNumber }}
+                  <span class="feed-pager__link is-active">{{ $p.PageNumber }}</span>
+                {{ else }}
+                  <a class="feed-pager__link" href="{{ $p.URL }}">{{ $p.PageNumber }}</a>
+                {{ end }}
+              </li>
+            {{ end }}
+            <li>
+              {{ with $paginator.Next }}
+                <a class="feed-pager__link feed-pager__link--nav" href="{{ .URL }}">下一页</a>
+              {{ else }}
+                <span class="feed-pager__link feed-pager__link--nav is-disabled">下一页</span>
+              {{ end }}
+            </li>
+          </ul>
+        </nav>
       {{ end }}
     {{ end }}
   </section>
 {{ end }}
 
+{{ define "context_sidebar" }}
+  {{ $homeInfo := .Site.Params.homeInfoParams }}
+  {{ $titleRaw := plainify .Site.Title }}
+  {{ $titleClean := trim $titleRaw " \t\r\n" }}
+  {{ $initial := default "S" (printf "%.1s" $titleClean) }}
+  <div class="home-sidebar">
+    <section class="home-sidebar__card home-sidebar__card--profile">
+      <div class="home-sidebar__brand">
+        <div class="home-sidebar__avatar">{{ $initial }}</div>
+        <div>
+          <p class="home-sidebar__title">{{ .Site.Title }}</p>
+          {{ with $homeInfo.Title }}
+            <p class="home-sidebar__subtitle">{{ . }}</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ with $homeInfo.Content }}
+        <div class="home-sidebar__intro">{{ . | markdownify }}</div>
+      {{ else }}
+        <p class="home-sidebar__intro">{{ .Site.Params.description }}</p>
+      {{ end }}
+    </section>
+    <section class="home-sidebar__card">
+      <p class="home-sidebar__label">社交</p>
+      {{ with .Site.Params.socialIcons }}
+        <ul class="home-sidebar__social">
+          {{ range . }}
+            <li><a href="{{ .url }}" target="_blank" rel="me noopener">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p class="home-sidebar__muted">暂无社交链接。</p>
+      {{ end }}
+    </section>
+  </div>
+{{ end }}

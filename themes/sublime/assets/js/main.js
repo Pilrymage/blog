@@ -1,4 +1,68 @@
 (() => {
+  function initSidebarPanels() {
+    const body = document.body;
+    const overlay = document.querySelector("[data-sidebar-overlay]");
+    const panels = Array.from(document.querySelectorAll("[data-sidebar-panel]"));
+    if (!body || !overlay || panels.length === 0) {
+      return;
+    }
+
+    const closeAll = () => {
+      panels.forEach((panel) => panel.classList.remove("is-open"));
+      body.classList.remove("has-sidebar-open");
+    };
+
+    const openPanel = (panel) => {
+      panels.forEach((item) => {
+        if (item === panel) {
+          item.classList.add("is-open");
+        } else {
+          item.classList.remove("is-open");
+        }
+      });
+      body.classList.add("has-sidebar-open");
+    };
+
+    const togglePanel = (panel) => {
+      if (!panel) {
+        return;
+      }
+      if (panel.classList.contains("is-open")) {
+        closeAll();
+      } else {
+        openPanel(panel);
+      }
+    };
+
+    document.querySelectorAll("[data-sidebar-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetId = button.getAttribute("data-sidebar-toggle");
+        if (!targetId) {
+          return;
+        }
+        const panel = document.getElementById(targetId);
+        togglePanel(panel);
+      });
+    });
+
+    document.querySelectorAll("[data-sidebar-close]").forEach((button) => {
+      button.addEventListener("click", () => closeAll());
+    });
+
+    overlay.addEventListener("click", () => closeAll());
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeAll();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1023) {
+        closeAll();
+      }
+    });
+  }
+
   function enhanceCopy(codeEl) {
     const pre = codeEl.closest("pre");
     if (!pre || pre.dataset.copyReady === "true") {
@@ -57,6 +121,8 @@
 
     const enableHighlight = body.dataset.featureHighlight !== "false";
     const enableCopy = body.dataset.featureCopy !== "false";
+
+    initSidebarPanels();
 
     const codeBlocks = Array.from(document.querySelectorAll("pre code"));
 

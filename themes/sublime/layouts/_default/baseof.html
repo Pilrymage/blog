@@ -22,13 +22,37 @@
   {{ block "extra_head" . }}{{ end }}
 </head>
 <body class="{{ if .IsHome }}is-home{{ end }}" data-feature-copy="{{ cond (default true $features.copyCode) "true" "false" }}" data-feature-highlight="{{ cond (default true $features.syntaxHighlight) "true" "false" }}">
-  <div class="page-shell">
-    {{ partial "header.html" . }}
-    <main id="main-content" class="site-main" role="main">
-    {{ block "main" . }}{{ end }}
-    </main>
-    {{ partial "footer.html" . }}
+  <div class="layout-grid">
+    <aside class="layout-sidebar layout-sidebar--primary" id="primarySidebar" data-sidebar-panel>
+      <div class="layout-sidebar__inner">
+        <button type="button" class="sidebar-panel__close" data-sidebar-close aria-label="关闭导航侧栏">关闭</button>
+        {{ partial "header.html" . }}
+      </div>
+    </aside>
+    <div class="layout-main">
+      <div class="layout-mobile-actions">
+        <button type="button" class="sidebar-trigger" data-sidebar-toggle="primarySidebar">
+          导航
+        </button>
+        <button type="button" class="sidebar-trigger" data-sidebar-toggle="contextSidebar">
+          侧栏
+        </button>
+      </div>
+      <div class="layout-main__columns">
+        <main id="main-content" class="layout-main__content" role="main">
+          {{ block "main" . }}{{ end }}
+        </main>
+        <aside class="layout-sidebar layout-sidebar--context" id="contextSidebar" data-sidebar-panel>
+            <button type="button" class="sidebar-panel__close" data-sidebar-close aria-label="关闭上下文侧栏">关闭</button>
+            {{ block "context_sidebar" . }}
+              {{ partial "sidebar-context.html" . }}
+            {{ end }}
+        </aside>
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
   </div>
+  <div class="sidebar-overlay" data-sidebar-overlay></div>
   {{ if (default true $features.syntaxHighlight) }}
     <script defer src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
   {{ end }}

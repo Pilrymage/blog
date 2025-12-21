@@ -1,6 +1,6 @@
 #+hugo_base_dir: ../
 
-* DONE About                
+* DONE About me                
 CLOSED: [2025-08-19 Tue 21:35]
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
@@ -54,7 +54,7 @@ Other techs I've learned:
   Still a desktop is preferred, so that my 16TB HDD can directly put in.
   (2025.8.20)
     
-* DONE Search
+* DONE 搜索
 CLOSED: [2025-08-24 Sun 17:25]
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /
@@ -78,7 +78,6 @@ CLOSED: [2025-10-29 Wed 21:00]
 :EXPORT_FILE_NAME: template
 :END:
 #+begin_src toml :front_matter_extra t
-  date = 2025-01-01 # 评分时间
   genres = ["historical"]
   recommended = true
   kicker = ""
@@ -262,7 +261,6 @@ Linux 比 Windows 好就好在有一个包管理器，
 - *查找与替换* ，大家都很熟悉正则表达式吧，Word 也有这种东西
 - *邮件合并* 虽然听上去很没用，但也是计算机二级的考点，还有一些妙用
 * TODO Emacs, Hugo, Codex：2025 年搭建个人博客的三位一体        :emacs:hugo:ai:
-* TODO Emacs, Hugo, Codex：2025 年搭建个人博客的三位一体        :emacs:hugo:ai:
 :PROPERTIES:
 :EXPORT_FILE_NAME: blog-the-fastman-way
 :END:
@@ -321,7 +319,6 @@ Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博�
 
 * TODO 信息熵的藝術：個人 RSS 閱讀工具基礎建設
 <<<<<<< HEAD
-* TODO 給我一個買 mp3、遊戲機、電子書和手柄的理由（手機不好玩嗎？）
 * TODO 給我一個買 mp3、遊戲機、電子書和手柄的理由（手機不好玩嗎？）
 :PROPERTIES:
 :EXPORT_FILE_NAME: buying-advice
@@ -469,7 +466,6 @@ Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博�
 :EXPORT_FILE_NAME: to-learn-programmers-editor
 :END:
 #+begin_src toml :front_matter_extra t
-  date = 2025-01-01 # 评分时间
   genres = ["historical"]
   recommended = true
   kicker = ""
@@ -482,7 +478,6 @@ Codex 等寫代碼的 AI 應該相當擅長前端。尤其是，它讀過的博�
 :EXPORT_FILE_NAME: kindle
 :END:
 #+begin_src toml :front_matter_extra t
-  date = 2025-12-09 # 评分时间
   kicker = ""
   [cover]
   image = ""
@@ -873,7 +868,30 @@ CLOSED: [2025-12-18 Thu 17:26]
 
     @@html: <span style="font-family: Times New Roman; font-size:2.8em;">Two roads diverged in a wood, and I— <br/>I took the one less travelled by, <br/>And that has made all the <em>difference</em>. </span>@@
 
-
+* TODO 不想刷SICP就給我滾——（計算機科學的邪典）
+:PROPERTIES:
+:EXPORT_FILE_NAME: sicp
+:END:
+#+begin_src toml :front_matter_extra t
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
+e
+* TODO “然而，這畢竟是我的孩子”
+:PROPERTIES:
+:EXPORT_FILE_NAME: your-own-program-from-scratch
+:END:
+#+begin_src toml :front_matter_extra t
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = ""
+#+end_src
 * Footnotes
 [fn:1] https://github.com/kepano/40-questions/blob/master/translations/zh-hans/year.md
-
