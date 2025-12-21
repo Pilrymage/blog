@@ -28,7 +28,7 @@
   {{ if or (hasPrefix $hero "http://") (hasPrefix $hero "https://") }}
     {{ $heroURL = $hero }}
   {{ else }}
-    {{ $heroURL = $hero | relURL }}
+    {{ $heroURL = $hero | absURL }}
   {{ end }}
 {{ end }}
 {{ $hasHero := ne $heroURL "" }}
