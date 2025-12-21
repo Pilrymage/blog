@@ -134,18 +134,36 @@
       return;
     }
 
-    const removeActive = () => {
-      sections.forEach(({ link }) => link.classList.remove("active"));
+    const clearActiveState = () => {
+      sections.forEach(({ link }) => {
+        link.classList.remove("active");
+        let item = link.closest("li");
+        while (item) {
+          item.classList.remove("has-active");
+          const parentList = item.parentElement;
+          item = parentList ? parentList.closest("li") : null;
+        }
+      });
+    };
+
+    const applyActiveState = (link) => {
+      link.classList.add("active");
+      let item = link.closest("li");
+      while (item) {
+        item.classList.add("has-active");
+        const parentList = item.parentElement;
+        item = parentList ? parentList.closest("li") : null;
+      }
     };
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            removeActive();
+            clearActiveState();
             const matched = sections.find(({ target }) => target === entry.target);
             if (matched) {
-              matched.link.classList.add("active");
+              applyActiveState(matched.link);
             }
           }
         });

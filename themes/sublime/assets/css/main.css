@@ -51,7 +51,7 @@ body {
 }
 
 .layout-sidebar__inner {
-  position: sticky;
+  position: fixed;
   top: 2rem;
   display: flex;
   flex-direction: column;
@@ -555,6 +555,7 @@ body.has-sidebar-open .sidebar-overlay {
 }
 
 .context-panel {
+  position: fixed;
   display: grid;
   flex-direction: column;
   gap: 1rem;
@@ -569,15 +570,90 @@ body.has-sidebar-open .sidebar-overlay {
   max-height: calc(100vh - 6rem);
   overflow: auto;
   font-size: 0.9rem;
+  padding-right: 0.2rem;
 }
 
 .context-panel__toc nav {
-  border-left: 2px solid var(--border-subtle);
-  padding-left: 0.8rem;
+  border-left: 1px solid var(--border-subtle);
+  padding-left: 0.55rem;
+}
+
+.context-panel__toc nav > ul {
+  list-style: none;
+  padding-left: 0.45rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.context-panel__toc ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0.85rem;
+  border-left: 1px solid rgba(118, 111, 104, 0.25);
+}
+
+.context-panel__toc ul ul {
+  padding-left: 0.75rem;
+  border-left-style: dashed;
+}
+
+.context-panel__toc li {
+  margin: 0;
+}
+
+.context-panel__toc li ul {
+  margin-top: 0.35rem;
+}
+
+.context-panel__toc li + li {
+  margin-top: 0.2rem;
 }
 
 .context-panel__toc a {
   border-bottom: none;
+  display: block;
+  padding: 0.18rem 0.3rem 0.18rem 0.65rem;
+  color: rgba(42, 38, 34, 0.55);
+  border-radius: 10px;
+  line-height: 1.4;
+  position: relative;
+  transition: color 0.2s ease, background 0.2s ease, font-size 0.2s ease;
+}
+
+.context-panel__toc nav > ul > li:hover > a,
+.context-panel__toc nav > ul > li:hover a {
+  color: var(--text-main);
+}
+
+.context-panel__toc a:hover,
+.context-panel__toc a:focus-visible {
+  color: var(--text-main);
+  background: rgba(12, 95, 102, 0.08);
+}
+
+.context-panel__toc a.active,
+.context-panel__toc li.has-active > a {
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(12, 95, 102, 0.12);
+}
+
+.context-panel__toc li.has-active > a::before {
+  content: "";
+  position: absolute;
+  left: -0.55rem;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.context-panel__toc li.has-active ul {
+  border-left-color: rgba(12, 95, 102, 0.35);
 }
 
 .context-panel__empty {
@@ -2039,7 +2115,7 @@ a:focus {
   }
 
   .layout-sidebar {
-    position: fixed;
+    position: relative;
     top: 0;
     bottom: 0;
     width: min(320px, 85vw);
@@ -2053,6 +2129,8 @@ a:focus {
   }
 
   .layout-sidebar.layout-sidebar--context {
+    height: 100%;
+    position: fixed;
     right: 0;
     left: auto;
     transform: translateX(105%);
