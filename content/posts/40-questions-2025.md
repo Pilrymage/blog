@@ -3,7 +3,7 @@ title = "2025年的四十問"
 date = 2025-12-18T17:26:00+08:00
 draft = false
 kicker = ""
-hero = "/ox-hugo/_20251221-154545screenshot.png"
+hero = "ox-hugo/_20251221-154545screenshot.png"
 +++
 
 > 圖源：[Camellia Official (youtube)](https://www.youtube.com/watch?v=_TwYA5pkGIQ)

@@ -567,7 +567,7 @@ CLOSED: [2025-12-18 Thu 17:26]
 :END:
 #+begin_src toml :front_matter_extra t
   kicker = ""
-  hero = "/ox-hugo/_20251221-154545screenshot.png"
+  hero = "ox-hugo/_20251221-154545screenshot.png"
 #+end_src
 
 #+begin_quote
@@ -894,7 +894,7 @@ e
 :END:
 #+begin_src toml :front_matter_extra t
   kicker = ""
-  hero = "/ox-hugo/_20251221-163624screenshot.png"
+  hero = "ox-hugo/_20251221-163624screenshot.png"
 #+end_src
 
 #+begin_quote
@@ -908,7 +908,7 @@ e
 :END:
 #+begin_src toml :front_matter_extra t
   kicker = "小的有小的打法，大的有大的打法"
-  hero = "/ox-hugo/_20251221-172821screenshot.png"
+  hero = "ox-hugo/_20251221-172821screenshot.png"
 #+end_src
 
 #+begin_quote
