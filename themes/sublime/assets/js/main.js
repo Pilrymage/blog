@@ -113,6 +113,52 @@
     pre.appendChild(button);
   }
 
+  function initActiveToc() {
+    const tocLinks = Array.from(document.querySelectorAll(".context-panel__toc a[href^='#']"));
+    if (tocLinks.length === 0) {
+      return;
+    }
+
+    const sections = tocLinks
+      .map((link) => {
+        const id = decodeURIComponent(link.getAttribute("href").slice(1));
+        const target = document.getElementById(id);
+        if (!target) {
+          return null;
+        }
+        return { link, target };
+      })
+      .filter(Boolean);
+
+    if (sections.length === 0) {
+      return;
+    }
+
+    const removeActive = () => {
+      sections.forEach(({ link }) => link.classList.remove("active"));
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            removeActive();
+            const matched = sections.find(({ target }) => target === entry.target);
+            if (matched) {
+              matched.link.classList.add("active");
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -70% 0px",
+      }
+    );
+
+    sections.forEach(({ target }) => observer.observe(target));
+  }
+
   function initEnhancements() {
     const body = document.body;
     if (!body) {
@@ -123,6 +169,7 @@
     const enableCopy = body.dataset.featureCopy !== "false";
 
     initSidebarPanels();
+    initActiveToc();
 
     const codeBlocks = Array.from(document.querySelectorAll("pre code"));
 

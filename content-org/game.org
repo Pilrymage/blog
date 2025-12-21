@@ -10,7 +10,6 @@
 :EXPORT_FILE_NAME: template
 :END:
 #+begin_src toml :front_matter_extra t
-  date = 2025-08-27 # 评分时间
   media_type =  "drama" # 作品类型
   # creator = "Outkast" # 创作者
   # creator_label = "LaFace Records" # 厂牌
@@ -24,7 +23,7 @@
   image = ""
   hero = 
 #+end_src
-* Pizza Tower
+* TODO Pizza Tower
 :PROPERTIES:
 :EXPORT_FILE_NAME: pizza-tower
 :END:
@@ -46,7 +45,7 @@
 #+end_src
 
 Under construction...
-* DOOM (2016)
+* TODO DOOM (2016)
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom-2016
 :END:
@@ -65,7 +64,7 @@ Under construction...
   image = "https://ptpimg.me/vwgtrw.jpg"
   target = "https://store.steampowered.com/app/379720/DOOM/"
 #+end_src
-* Deltarune
+* TODO Deltarune
 :PROPERTIES:
 :EXPORT_FILE_NAME: deltarune
 :END:
@@ -85,7 +84,7 @@ Under construction...
   image = "https://ptpimg.me/xz58j9.jpg"
   target = "https://store.steampowered.com/app/1671210/DELTARUNE/"
 #+end_src
-* Ducktales: Remastered
+* TODO Ducktales: Remastered
 :PROPERTIES:
 :EXPORT_FILE_NAME: ducktales-remastered
 :END:
@@ -105,7 +104,7 @@ Under construction...
   image = "https://ptpimg.me/h24b7f.jpg"
   target = "https://store.steampowered.com/app/237630/DuckTales_Remastered/"
 #+end_src
-* Red Dead Redemption 2
+* TODO Red Dead Redemption 2
 :PROPERTIES:
 :EXPORT_FILE_NAME: red-dead-redemption-2
 :END:
@@ -125,7 +124,7 @@ Under construction...
   image = "https://ptpimg.me/102s82.png"
   target = "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
 #+end_src
-* Grand Theft Auto: San Andreas
+* TODO Grand Theft Auto: San Andreas
 :PROPERTIES:
 :EXPORT_FILE_NAME: grand-theft-auto-san-andreas
 :END:
@@ -145,7 +144,7 @@ Under construction...
   image = "https://ptpimg.me/2xb45f.jpg"
   target = "https://store.steampowered.com/app/12120/Grand_Theft_Auto_San_Andreas/"
 #+end_src
-* Grand Theft Auto: Vice City
+* TODO Grand Theft Auto: Vice City
 :PROPERTIES:
 :EXPORT_FILE_NAME: grand-theft-auto-vice-city
 :END:
@@ -165,7 +164,7 @@ Under construction...
   image = "https://ptpimg.me/ftr5u4.jpg"
   target = "https://store.steampowered.com/app/12110/Grand_Theft_Auto_Vice_City/"
 #+end_src
-* Doom + Doom II
+* TODO Doom + Doom II
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom-doom-ii
 :END:
@@ -185,7 +184,7 @@ Under construction...
   image = "https://ptpimg.me/15tp8b.jpg"
   target = "https://store.steampowered.com/app/2280/DOOM_1993"
 #+end_src
-* Persona 4 Golden
+* TODO Persona 4 Golden
 :PROPERTIES:
 :EXPORT_FILE_NAME: persona-4-golden
 :END:
@@ -205,7 +204,7 @@ Under construction...
   image = "https://ptpimg.me/ht45z8.jpg"
   target = "https://store.steampowered.com/app/1113000/Persona_4_Golden/"
 #+end_src
-* Hollow Knight
+* TODO Hollow Knight
 :PROPERTIES:
 :EXPORT_FILE_NAME: hollow-knight
 :END:
@@ -225,7 +224,7 @@ Under construction...
   image = "https://ptpimg.me/cehx62.jpg"
   target = "https://store.steampowered.com/app/367520/Hollow_Knight/"
 #+end_src
-* Half-Life
+* TODO Half-Life
 :PROPERTIES:
 :EXPORT_FILE_NAME: half-life
 :END:
@@ -245,7 +244,7 @@ Under construction...
   image = "https://ptpimg.me/300zhn.jpg"
   target = "https://store.steampowered.com/app/70/HalfLife/"
 #+end_src
-* Portal
+* TODO Portal
 :PROPERTIES:
 :EXPORT_FILE_NAME: portal
 :END:
@@ -265,7 +264,7 @@ Under construction...
   image = "https://ptpimg.me/2439j3.jpg"
   target = "https://store.steampowered.com/app/400/Portal/"
 #+end_src
-* Portal 2
+* TODO Portal 2
 :PROPERTIES:
 :EXPORT_FILE_NAME: portal-2
 :END:
@@ -284,4 +283,22 @@ Under construction...
   [cover]
   image = "https://ptpimg.me/i2s203.jpg"
   target = "https://store.steampowered.com/app/620/Portal_2/"
+#+end_src
+* TODO Template
+:PROPERTIES:
+:EXPORT_FILE_NAME: template
+:END:
+#+begin_src toml :front_matter_extra t
+  media_type =  "drama" # 作品类型
+  # creator = "Outkast" # 创作者
+  # creator_label = "LaFace Records" # 厂牌
+  release_date = "1998" # 作品发行/上映日期
+  score = 8.5 # 分数
+
+  genres = ["historical"]
+  recommended = true
+  kicker = ""
+  [cover]
+  image = ""
+  hero = 
 #+end_src
