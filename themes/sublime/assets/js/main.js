@@ -177,6 +177,26 @@
     sections.forEach(({ target }) => observer.observe(target));
   }
 
+  function initCollapsibleToc() {
+    const section = document.querySelector("[data-toc-section]");
+    const toggle = document.querySelector("[data-toc-toggle]");
+    if (!section || !toggle) {
+      return;
+    }
+
+    const applyState = () => {
+      const collapsed = section.classList.contains("is-collapsed");
+      toggle.setAttribute("aria-expanded", String(!collapsed));
+    };
+
+    toggle.addEventListener("click", () => {
+      section.classList.toggle("is-collapsed");
+      applyState();
+    });
+
+    applyState();
+  }
+
   function initEnhancements() {
     const body = document.body;
     if (!body) {
@@ -187,6 +207,7 @@
     const enableCopy = body.dataset.featureCopy !== "false";
 
     initSidebarPanels();
+    initCollapsibleToc();
     initActiveToc();
 
     const codeBlocks = Array.from(document.querySelectorAll("pre code"));
